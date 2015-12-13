@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TETOPergunta</string>
+
+    <string name="titulo_main">Lista Cadastros</string>
+
+    <string name="q1">Você ou alguém da sua família enfrentam ou enfrentaram </string>
+
+    <array name="preconceito">
+        <item>---</item>
+        <item>Sim</item>
+        <item>Não</item>
+    </array>
+</resources>
