@@ -1,52 +1,57 @@
-package com.example.henrique.tetopergunta;
+package com.example.henrique.tetopergunta.Main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.LinkedList;
+import com.example.henrique.tetopergunta.Banco_de_dados.DBMS;
+import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.R;
+
 import java.util.List;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private ListView lista;
     private List<Respostas> respostasList;
+    public static DBMS data_handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        respostasList = new LinkedList<Respostas>();
-
-        lista = (ListView) findViewById(R.id.lista);
-        lista.setAdapter(new ListAdapter(MainActivity.this, respostasList));
+        data_handler = new DBMS(MainActivity.this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        Respostas resp = new Respostas();
-        resp.setResposta(0, "Kenzo");
-        respostasList.add(resp);
+        respostasList = data_handler.getLista();
+        ListView lista = (ListView) findViewById(R.id.lista);
+        lista.setAdapter(new ListAdapter(MainActivity.this, respostasList));
 
-        resp = new Respostas();
-        resp.setResposta(0, "Brócolis");
-        respostasList.add(resp);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Respostas resposta_get = respostasList.get(position);
+                Intent dados = new Intent(MainActivity.this, VerDados.class);
 
-        resp = new Respostas();
-        resp.setResposta(0, "Rodrigues");
-        respostasList.add(resp);
+                dados.putExtra("id", resposta_get.getAnswers()[1][1]);
+
+                startActivity(dados);
+            }
+        });
     }
 
     @Override
@@ -106,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
 
-            viewHolder.textoLista.setText(respostasList.get(position).getRespostas()[0]);
+            viewHolder.textoLista.setText(respostasList.get(position).getAnswers()[1][1]);
 
             return convertView;
         }

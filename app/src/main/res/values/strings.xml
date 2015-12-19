@@ -10,4 +10,11 @@
         <item>Sim</item>
         <item>Não</item>
     </array>
+    <string name="title_activity_modulo1">Modulo1</string>
+    <string name="title_activity_modulo2">Modulo2</string>
+    <string name="title_activity_modulo3">Modulo3</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_ver_dados">VerDados</string>
 </resources>
