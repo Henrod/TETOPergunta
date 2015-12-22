@@ -1,5 +1,7 @@
 package com.example.henrique.tetopergunta.Main;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
 import com.example.henrique.tetopergunta.Fragments_adapter.SimpleTabsAdapter;
 import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo0;
+import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo1;
 import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo2;
 import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo3;
 import com.example.henrique.tetopergunta.R;
@@ -30,6 +33,7 @@ public class InserirDados extends AppCompatActivity {
 
     private static Toolbar toolbar;
     private static Modulo0 modulo0;
+    private static Modulo1 modulo1;
     private static Modulo2 modulo2;
     private static Modulo3 modulo3;
 
@@ -48,11 +52,13 @@ public class InserirDados extends AppCompatActivity {
         tabsAdapter = new SimpleTabsAdapter(getSupportFragmentManager());
 
         modulo0 = new Modulo0();
+        modulo1 = new Modulo1();
         modulo2 = new Modulo2();
         modulo3 = new Modulo3();
 
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações da enquete");
+        tabsAdapter.addFragment(modulo1, "Módulo 1");
         tabsAdapter.addFragment(modulo2, "Módulo 2");
         tabsAdapter.addFragment(modulo3, "Módulo 3");
 
@@ -87,7 +93,7 @@ public class InserirDados extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
                 return true;
             case R.id.cancel_table:
-                startActivity(new Intent(InserirDados.this, MainActivity.class));
+                cancel_message();
                 return true;
             default:
                 super.onOptionsItemSelected(item);
@@ -97,12 +103,27 @@ public class InserirDados extends AppCompatActivity {
 
     private boolean save() {
         if (modulo0.save()) {
-
+            modulo1.save();
             MainActivity.data_handler.create(respostas);
 
             return true;
         }
 
         return false;
+    }
+
+    private void cancel_message() {
+        AlertDialog.Builder cancel_message = new AlertDialog.Builder(InserirDados.this);
+        cancel_message.setTitle("Cancelar este cadastro? (os dados inseridos serão perdidos)");
+
+        cancel_message.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(InserirDados.this, MainActivity.class));
+            }
+        });
+
+        cancel_message.setCancelable(true);
+        cancel_message.create().show();
     }
 }

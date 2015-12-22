@@ -25,12 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q1"
-            android:hint="Nº série"/>
+            android:hint="@string/m0q1"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q2"
-            android:hint="Nº mapa" />
+            android:hint="@string/m0q2" />
 
 
 
@@ -45,17 +45,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q3"
-            android:hint="País" />
+            android:hint="@string/m0q3" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q4"
-            android:hint="Estado" />
+            android:hint="@string/m0q4" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q5"
-            android:hint="Município" />
+            android:hint="@string/m0q5" />
 
     </TableLayout>
 

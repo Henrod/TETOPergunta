@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
 import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo0;
+import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo1;
 import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo2;
 import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo3;
 import com.example.henrique.tetopergunta.Fragments_adapter.SimpleTabsAdapter;
@@ -27,6 +28,7 @@ public class VerDados extends AppCompatActivity {
     private static SimpleTabsAdapter tabsAdapter;
 
     private static Respostas_modulo0 modulo0;
+    private static Respostas_modulo1 modulo1;
     private static Respostas_modulo2 modulo2;
     private static Respostas_modulo3 modulo3;
 
@@ -46,11 +48,13 @@ public class VerDados extends AppCompatActivity {
         tabsAdapter = new SimpleTabsAdapter(getSupportFragmentManager());
 
         modulo0 = new Respostas_modulo0();
+        modulo1 = new Respostas_modulo1();
         modulo2 = new Respostas_modulo2();
         modulo3 = new Respostas_modulo3();
 
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações da enquete");
+        tabsAdapter.addFragment(modulo1, "Módulo 1");
         tabsAdapter.addFragment(modulo2, "Módulo 2");
         tabsAdapter.addFragment(modulo3, "Módulo 3");
 

@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Nº série:"
+                android:text="@string/m0q1"
                 />
             <TextView
                 android:id="@+id/tv_m0q1"
@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Nº Mapa:"
+                android:text="@string/m0q2"
                 />
             <TextView
                 android:id="@+id/tv_m0q2"
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="País:"
+                android:text="@string/m0q3"
                 />
             <TextView
                 android:id="@+id/tv_m0q3"
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Estado:"
+                android:text="@string/m0q4"
                 />
             <TextView
                 android:id="@+id/tv_m0q4"
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Cidade:"
+                android:text="@string/m0q5"
                 />
             <TextView
                 android:id="@+id/tv_m0q5"

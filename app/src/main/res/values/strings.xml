@@ -3,18 +3,44 @@
 
     <string name="titulo_main">Lista Cadastros</string>
 
-    <string name="q1">Você ou alguém da sua família enfrentam ou enfrentaram </string>
-
-    <array name="preconceito">
-        <item>---</item>
-        <item>Sim</item>
-        <item>Não</item>
-    </array>
     <string name="title_activity_modulo1">Modulo1</string>
     <string name="title_activity_modulo2">Modulo2</string>
     <string name="title_activity_modulo3">Modulo3</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_ver_dados">VerDados</string>
+    <string name="m0q1">Nº série</string>
+    <string name="m0q2">Nº mapa</string>
+    <string name="m0q3">1. País</string>
+    <string name="m0q4">2. Estado</string>
+    <string name="m0q5">3. Município</string>
+
+    <string name="m1q1">(1.01) Por favor, diga-me os nomes das pessoas que vivem nesta casa. Comece a lista pelo chefe do lar.</string>
+    <string name="m1q2">(1.02) No momento da aplicação desta enquete, este membro da família estava presente?</string>
+        <array name="m1q2">
+            <item>Sim</item>
+            <item>Não</item>
+        </array>
+    <string name="m1q3">(1.03) [NOME] é homem ou mulher?</string>
+        <array name="m1q3">
+            <item> </item>
+            <item>Homem</item>
+            <item>Mulher</item>
+        </array>
+    <string name="m1q4">(1.04) Quantos anos completos tem [NOME]?</string>
+    <string name="m1q5">(1.05) Qual é a relação de parentesco de [NOME] com o chefe do lar?</string>
+        <array name="m1q5">
+            <item>1- Chefe do lar</item>
+            <item>2- Cônjugue/companheira(o)</item>
+            <item>3- Filha(o)/enteada(o)</item>
+            <item>4- Pai ou mãe</item>
+            <item>5- Sogra(o)</item>
+            <item>6- Nora ou genro</item>
+            <item>7- Neta(o)</item>
+            <item>8- Irmã(o)</item>
+            <item>9- Cunhada(o)</item>
+            <item>10- Sobrinha(o)</item>
+            <item>11- Tia(o)</item>
+            <item>12- Outro familiar</item>
+            <item>13- Não familiar</item>
+        </array>
+
 </resources>

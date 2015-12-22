@@ -35,7 +35,10 @@ public class Modulo0 extends Fragment {
         String n_serie = ((EditText) view.findViewById(R.id.m0q1)).getText().toString();
 
         if (n_serie.equals("") || n_serie.isEmpty() || n_serie.length() == 0 ||
-                MainActivity.data_handler.retrieve(n_serie).getAnswers()[0][1].equals(n_serie))
+                MainActivity.
+                        data_handler.
+                        retrieve(n_serie).
+                        getAnswers()[0][1] != null)
             return false;
 
         String[] answers = { "---",
