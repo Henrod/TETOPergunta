@@ -80,6 +80,11 @@ public class VerDados extends AppCompatActivity {
             case R.id.delete_table:
                 message_and_delete_table();
                 return true;
+            case R.id.edit_table:
+                Intent edit = new Intent(VerDados.this, InserirDados.class);
+                edit.putExtra("id", id);
+                startActivity(edit);
+                return true;
             default:
                 super.onOptionsItemSelected(item);
         }

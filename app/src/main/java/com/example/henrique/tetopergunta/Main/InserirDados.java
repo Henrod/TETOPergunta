@@ -43,8 +43,6 @@ public class InserirDados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dados);
 
-        respostas = new Respostas();
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -73,6 +71,8 @@ public class InserirDados extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        String id = getIntent().getStringExtra("id");
+        respostas = id == null ? new Respostas() : set_respostas(id);
     }
 
     @Override
@@ -125,5 +125,21 @@ public class InserirDados extends AppCompatActivity {
 
         cancel_message.setCancelable(true);
         cancel_message.create().show();
+    }
+
+    private Respostas set_respostas(String id) {
+        Respostas respostas = MainActivity.data_handler.retrieve(id);
+
+        modulo0.set_respostas(respostas);
+
+        return respostas;
+    }
+
+    public static int get_position_from_array(String[] array, String data){
+        for(int i = 0; i < array.length; i++)
+            if (array[i].contentEquals(data))
+                return i;
+
+        return 0;
     }
 }
