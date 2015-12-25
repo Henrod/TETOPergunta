@@ -31,6 +31,7 @@ public class Modulo0 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_modulo0, container, false);
+        if (InserirDados.insert_data) set_respostas(InserirDados.respostas);
 
         return view;
     }
@@ -49,11 +50,8 @@ public class Modulo0 extends Fragment {
         }
 
 
-        if (n_serie.equals("") || n_serie.isEmpty() || n_serie.length() == 0 ||
-                MainActivity.
-                        data_handler.
-                        retrieve(n_serie).
-                        getAnswers()[0][1] != null)
+        if (!InserirDados.insert_data && (n_serie.equals("") || n_serie.isEmpty() || n_serie.length() == 0 ||
+                MainActivity.data_handler.retrieve(n_serie).getAnswers()[0][1] != null))
             return false;
 
         String[] answers = { "---",

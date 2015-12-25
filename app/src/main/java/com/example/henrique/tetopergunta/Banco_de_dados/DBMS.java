@@ -132,7 +132,7 @@ public class DBMS {
 
     private static final String TABLE_NAME = "DADOS_FAMILIA";
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 6;
     private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "
@@ -247,11 +247,11 @@ public class DBMS {
         ContentValues contentValues = new ContentValues();
 
         for (int i = 0; i < Respostas.MODULES; i++)
-            for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i]; j++)
+            for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++)
                 contentValues.put("M" + i + "Q" + j, respostas.getAnswers()[i][j]);
 
-        db.update(TABLE_NAME, contentValues, ID + " = ?",
-                new String[]{String.valueOf(respostas.getId())});
+        db.update(TABLE_NAME, contentValues, M0Q1 + " = ?",
+                new String[]{respostas.getAnswers()[0][1]});
         db.close();
     }
 

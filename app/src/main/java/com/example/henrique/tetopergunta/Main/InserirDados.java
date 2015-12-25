@@ -37,6 +37,8 @@ public class InserirDados extends AppCompatActivity {
     private static Modulo2 modulo2;
     private static Modulo3 modulo3;
 
+    public static boolean insert_data = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +106,11 @@ public class InserirDados extends AppCompatActivity {
     private boolean save() {
         if (modulo0.save()) {
             modulo1.save();
-            MainActivity.data_handler.create(respostas);
+
+            if (insert_data) MainActivity.data_handler.update(respostas);
+            else             MainActivity.data_handler.create(respostas);
+
+            insert_data = false;
 
             return true;
         }
@@ -128,11 +134,8 @@ public class InserirDados extends AppCompatActivity {
     }
 
     private Respostas set_respostas(String id) {
-        Respostas respostas = MainActivity.data_handler.retrieve(id);
-
-        modulo0.set_respostas(respostas);
-
-        return respostas;
+        insert_data = true;
+        return MainActivity.data_handler.retrieve(id);
     }
 
     public static int get_position_from_array(String[] array, String data){
