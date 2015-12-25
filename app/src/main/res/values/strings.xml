@@ -7,15 +7,50 @@
     <string name="title_activity_modulo2">Modulo2</string>
     <string name="title_activity_modulo3">Modulo3</string>
 
+    <string name="modulo0_A">A - Dados da comunidade</string>
     <string name="m0q1">Nº série</string>
     <string name="m0q2">Nº mapa</string>
     <string name="m0q3">1. País</string>
     <string name="m0q4">2. Estado</string>
     <string name="m0q5">3. Município</string>
+    <string name="m0q6">4. Comunidade</string>
+
+    <string name="modulo0_B">B - Endereço de moradia</string>
+    <string name="m0q7">5. Nome completo da pessoa que respondeu a enquete</string>
+    <string name="m0q8">6. Telefones</string>
+    <string name="m0q9">7. Endereço</string>
+    <string name="m0q10">8. Como seria mais fácil para entrarmos em contato com vocês?</string>
+
+    <string name="modulo0_C">C - Dados da entrevista</string>
+    <string name="m0q11">9. Entrevistador 1</string>
+    <string name="m0q12">10. Email</string>
+    <string name="m0q13">11. Telefone</string>
+    <string name="m0q14">12. Entrevistador 2</string>
+    <string name="m0q15">13. Email</string>
+    <string name="m0q16">14. Telefone</string>
+    <string name="m0q17">15. Líder</string>
+    <string name="m0q18">16. Data</string>
+    <string name="m0q19">17. Resultado</string>
+        <array name="m0q19">
+            <item> </item>
+            <item>1-Completa</item>
+            <item>2-Parcial</item>
+            <item>3-Recusa</item>
+            <item>4-Não foi contactado/ausência temporária</item>
+            <item>5-Moradia desocupada</item>
+        </array>
+    <string name="m0q20">18. Hora início</string>
+    <string name="m0q21">19. Hora fim</string>
+    <string name="m0q22">20. Observações</string>
+
+    <string name="modulo0_D">D - Apresentação</string>
+    <string name="modulo0_E">E - Instruções básicas</string>
+    
 
     <string name="m1q1">(1.01) Por favor, diga-me os nomes das pessoas que vivem nesta casa. Comece a lista pelo chefe do lar.</string>
     <string name="m1q2">(1.02) No momento da aplicação desta enquete, este membro da família estava presente?</string>
         <array name="m1q2">
+            <item> </item>
             <item>Sim</item>
             <item>Não</item>
         </array>
@@ -28,6 +63,7 @@
     <string name="m1q4">(1.04) Quantos anos completos tem [NOME]?</string>
     <string name="m1q5">(1.05) Qual é a relação de parentesco de [NOME] com o chefe do lar?</string>
         <array name="m1q5">
+            <item> </item>
             <item>1- Chefe do lar</item>
             <item>2- Cônjugue/companheira(o)</item>
             <item>3- Filha(o)/enteada(o)</item>

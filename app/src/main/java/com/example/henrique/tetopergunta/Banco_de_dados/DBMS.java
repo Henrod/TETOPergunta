@@ -34,6 +34,10 @@ public class DBMS {
     private static final String M0Q18 = "m0q18";
     private static final String M0Q19 = "m0q19";
     private static final String M0Q20 = "m0q20";
+    private static final String M0Q21 = "m0q21";
+    private static final String M0Q22 = "m0q22";
+    private static final String M0Q23 = "m0q23";
+    private static final String M0Q24 = "m0q24";
 
     private static final String M1Q1 = "m1q1";
     private static final String M1Q2 = "m1q2";
@@ -128,7 +132,7 @@ public class DBMS {
 
     private static final String TABLE_NAME = "DADOS_FAMILIA";
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 5;
     private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "
@@ -137,7 +141,9 @@ public class DBMS {
             + M0Q10 +   " TEXT, " + M0Q11 + " TEXT, " + M0Q12 + " TEXT, "
             + M0Q13 +   " TEXT, " + M0Q14 + " TEXT, " + M0Q15 + " TEXT, "
             + M0Q16 +   " TEXT, " + M0Q17 + " TEXT, " + M0Q18 + " TEXT, "
-            + M0Q19 +   " TEXT, " + M0Q20 + " TEXT, " + M1Q1 +  " TEXT, "
+            + M0Q19 +   " TEXT, " + M0Q20 + " TEXT, " + M0Q21 +  " TEXT, "
+            + M0Q22 +   " TEXT, " + M0Q23 +  " TEXT, "
+            + M0Q24 +   " TEXT, " + M1Q1 +  " TEXT, "
             + M1Q2 +  " TEXT, " + M1Q3 +  " TEXT, " + M1Q4 +    " TEXT, "
             + M1Q5 +  " TEXT, " + M1Q6 +  " TEXT, " + M1Q7 +    " TEXT, "
             + M1Q8 +  " TEXT, " + M1Q9 +  " TEXT, " + M1Q10 +   " TEXT, "
@@ -222,9 +228,9 @@ public class DBMS {
             do {
                 String[] resp = new String[Respostas.MAX_N_QUESTIONS + 1];
                 for (int i = 0; i < Respostas.MODULES; i++) {
-                    for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++) {
-                        resp[j] = cursor.getString(j);
-                    }
+                    for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++)
+                        resp[j] = cursor.getString(cursor.getColumnIndex("m" + i + "q" + j));
+
                     respostas.setAnswers(i, resp);
                 }
             } while (cursor.moveToNext());

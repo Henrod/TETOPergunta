@@ -5,7 +5,7 @@ package com.example.henrique.tetopergunta.Banco_de_dados;
  */
 public class Respostas {
 
-    final public static int[] QUESTIONS_PER_MODULE  = {20, 10, 8, 18, 10, 9, 28 };
+    final public static int[] QUESTIONS_PER_MODULE  = {24, 10, 8, 18, 10, 9, 28 };
     final public static int MODULES = 7;
     final public static int MAX_N_QUESTIONS = 28;
 

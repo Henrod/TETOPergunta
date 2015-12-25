@@ -25,19 +25,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q1"
-            android:hint="@string/m0q1"/>
+            android:hint="@string/m0q1"
+            android:inputType="text"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q2"
-            android:hint="@string/m0q2" />
+            android:hint="@string/m0q2"
+            android:inputType="text"/>
 
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A - Dados da comunidade"
+            android:text="@string/modulo0_A"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
@@ -45,17 +47,179 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q3"
-            android:hint="@string/m0q3" />
+            android:hint="@string/m0q3"
+            android:inputType="text"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q4"
-            android:hint="@string/m0q4" />
+            android:hint="@string/m0q4"
+            android:inputType="text"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/m0q5"
-            android:hint="@string/m0q5" />
+            android:hint="@string/m0q5"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q6"
+            android:hint="@string/m0q6"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo0_B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q7"
+            android:hint="@string/m0q7"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q8"
+            android:hint="@string/m0q8"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q9"
+            android:hint="@string/m0q9"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q10"
+            android:hint="@string/m0q10"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo0_C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q11"
+            android:hint="@string/m0q11"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q12"
+            android:hint="@string/m0q12"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:inputType="textWebEmailAddress"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q13"
+            android:hint="@string/m0q13"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:inputType="phone"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q14"
+            android:hint="@string/m0q14"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q15"
+            android:hint="@string/m0q15"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:inputType="textWebEmailAddress"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q16"
+            android:hint="@string/m0q16"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:inputType="phone"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q17"
+            android:hint="@string/m0q17"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q18"
+            android:hint="@string/m0q18"
+            android:inputType="date"/>
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:text="@string/m0q19" />
+            <Spinner
+                android:id="@+id/m0q19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/m0q19"/>
+        </TableRow>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q20"
+            android:hint="@string/m0q20"
+            android:inputType="datetime"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q21"
+            android:hint="@string/m0q21"
+            android:inputType="datetime"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q22"
+            android:hint="@string/m0q22"
+            android:inputType="textMultiLine"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo0_D"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q23"
+            android:inputType="textMultiLine"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo0_E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m0q24"
+            android:inputType="textMultiLine"/>
 
     </TableLayout>
 
