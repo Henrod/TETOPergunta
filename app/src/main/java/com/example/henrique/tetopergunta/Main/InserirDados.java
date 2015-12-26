@@ -120,7 +120,7 @@ public class InserirDados extends AppCompatActivity {
 
     private void cancel_message() {
         AlertDialog.Builder cancel_message = new AlertDialog.Builder(InserirDados.this);
-        cancel_message.setTitle("Cancelar este cadastro? (os dados inseridos serão perdidos)");
+        cancel_message.setTitle("Cancelar este cadastro? (os novos dados inseridos serão perdidos)");
 
         cancel_message.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
@@ -136,13 +136,5 @@ public class InserirDados extends AppCompatActivity {
     private Respostas set_respostas(String id) {
         insert_data = true;
         return MainActivity.data_handler.retrieve(id);
-    }
-
-    public static int get_position_from_array(String[] array, String data){
-        for(int i = 0; i < array.length; i++)
-            if (array[i].contentEquals(data))
-                return i;
-
-        return 0;
     }
 }

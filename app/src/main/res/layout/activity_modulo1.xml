@@ -10,69 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical">
 
-    <TableLayout
+    <LinearLayout
+        android:id="@+id/mod1_table"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView
+        <Button
+            android:id="@+id/mod1_add_person"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/m1q1"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/m1q1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            />
+            android:text="Acrescentar pessoa"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/m1q2"
-            android:textSize="20sp" />
-        <Spinner
-            android:id="@+id/m1q2"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:entries="@array/m1q2"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/m1q3"
-            android:textSize="20sp" />
-        <Spinner
-            android:id="@+id/m1q3"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:entries="@array/m1q3"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/m1q4"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/m1q4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:ems="10"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/m1q5"
-            android:textSize="20sp" />
-        <Spinner
-            android:id="@+id/m1q5"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:entries="@array/m1q5"/>
-
-    </TableLayout>
-
+    </LinearLayout>
 </ScrollView>

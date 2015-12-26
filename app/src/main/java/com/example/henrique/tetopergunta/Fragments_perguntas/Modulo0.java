@@ -12,9 +12,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.Banco_de_dados.RespostasInfo;
 import com.example.henrique.tetopergunta.Main.InserirDados;
 import com.example.henrique.tetopergunta.Main.MainActivity;
 import com.example.henrique.tetopergunta.R;
+
+import java.util.ArrayList;
 
 public class Modulo0 extends Fragment {
 
@@ -42,17 +45,17 @@ public class Modulo0 extends Fragment {
     }
 
     public boolean save() {
-        String n_serie = "";
+        String n_serie;
         {
             Editable _n_serie = ((EditText) view.findViewById(R.id.m0q1)).getText();
             if (_n_serie == null) return false;
             n_serie = _n_serie.toString();
         }
 
-
-        if (!InserirDados.insert_data && (n_serie.equals("") || n_serie.isEmpty() || n_serie.length() == 0 ||
-                MainActivity.data_handler.retrieve(n_serie).getAnswers()[0][1] != null))
+        if (!InserirDados.insert_data && (n_serie.equals("")  ||
+                MainActivity.data_handler.retrieve(n_serie).getNSerie() != null)) {
             return false;
+        }
 
         String[] answers = { "---",
                 n_serie,
@@ -81,41 +84,99 @@ public class Modulo0 extends Fragment {
                 ((EditText) view.findViewById(R.id.m0q24)).getText().toString(),
         };
 
-        InserirDados.respostas.setAnswers(0, answers);
+        InserirDados.respostas.setNSerie(n_serie);
+
+        for (int i = 1; i < 25; i++) {
+            InserirDados.respostas.setAnswers(
+                    new RespostasInfo(0, i, answers[i]), Respostas.Modulos.MAIN, 0, InserirDados.insert_data
+            );
+        }
 
         return true;
     }
 
     public void set_respostas(Respostas respostas) {
-        String[][] resps = respostas.getAnswers();
+        ArrayList<RespostasInfo> resps = respostas.getMainAnswers();
 
-        ((EditText) view.findViewById(R.id.m0q1)).setText(resps[0][1]);
-        ((EditText) view.findViewById(R.id.m0q2)).setText(resps[0][2]);
-        ((EditText) view.findViewById(R.id.m0q3)).setText(resps[0][3]);
-        ((EditText) view.findViewById(R.id.m0q4)).setText(resps[0][4]);
-        ((EditText) view.findViewById(R.id.m0q5)).setText(resps[0][5]);
-        ((EditText) view.findViewById(R.id.m0q6)).setText(resps[0][6]);
-        ((EditText) view.findViewById(R.id.m0q7)).setText(resps[0][7]);
-        ((EditText) view.findViewById(R.id.m0q8)).setText(resps[0][8]);
-        ((EditText) view.findViewById(R.id.m0q9)).setText(resps[0][9]);
-        ((EditText) view.findViewById(R.id.m0q10)).setText(resps[0][10]);
-        ((EditText) view.findViewById(R.id.m0q11)).setText(resps[0][11]);
-        ((EditText) view.findViewById(R.id.m0q12)).setText(resps[0][12]);
-        ((EditText) view.findViewById(R.id.m0q13)).setText(resps[0][13]);
-        ((EditText) view.findViewById(R.id.m0q14)).setText(resps[0][14]);
-        ((EditText) view.findViewById(R.id.m0q15)).setText(resps[0][15]);
-        ((EditText) view.findViewById(R.id.m0q16)).setText(resps[0][16]);
-        ((EditText) view.findViewById(R.id.m0q17)).setText(resps[0][17]);
-        ((EditText) view.findViewById(R.id.m0q18)).setText(resps[0][18]);
-        ((Spinner)  view.findViewById(R.id.m0q19)).setSelection(
-                        InserirDados.get_position_from_array(getResources().
-                        getStringArray(R.array.m0q19), resps[0][19])
-        );
-        ((EditText) view.findViewById(R.id.m0q20)).setText(resps[0][20]);
-        ((EditText) view.findViewById(R.id.m0q21)).setText(resps[0][21]);
-        ((EditText) view.findViewById(R.id.m0q22)).setText(resps[0][22]);
-        ((EditText) view.findViewById(R.id.m0q23)).setText(resps[0][23]);
-        ((EditText) view.findViewById(R.id.m0q24)).setText(resps[0][24]);
-
+        for (RespostasInfo rInfo : resps) {
+            if (rInfo.modulo == 0)
+                switch (rInfo.n_questao) {
+                    case 1:
+                        ((EditText) view.findViewById(R.id.m0q1)).setText(rInfo.resp);
+                        break;
+                    case 2:
+                        ((EditText) view.findViewById(R.id.m0q2)).setText(rInfo.resp);
+                        break;
+                    case 3:
+                        ((EditText) view.findViewById(R.id.m0q3)).setText(rInfo.resp);
+                        break;
+                    case 4:
+                        ((EditText) view.findViewById(R.id.m0q4)).setText(rInfo.resp);
+                        break;
+                    case 5:
+                        ((EditText) view.findViewById(R.id.m0q5)).setText(rInfo.resp);
+                        break;
+                    case 6:
+                        ((EditText) view.findViewById(R.id.m0q6)).setText(rInfo.resp);
+                        break;
+                    case 7:
+                        ((EditText) view.findViewById(R.id.m0q7)).setText(rInfo.resp);
+                        break;
+                    case 8:
+                        ((EditText) view.findViewById(R.id.m0q8)).setText(rInfo.resp);
+                        break;
+                    case 9:
+                        ((EditText) view.findViewById(R.id.m0q9)).setText(rInfo.resp);
+                        break;
+                    case 10:
+                        ((EditText) view.findViewById(R.id.m0q10)).setText(rInfo.resp);
+                        break;
+                    case 11:
+                        ((EditText) view.findViewById(R.id.m0q11)).setText(rInfo.resp);
+                        break;
+                    case 12:
+                        ((EditText) view.findViewById(R.id.m0q12)).setText(rInfo.resp);
+                        break;
+                    case 13:
+                        ((EditText) view.findViewById(R.id.m0q13)).setText(rInfo.resp);
+                        break;
+                    case 14:
+                        ((EditText) view.findViewById(R.id.m0q14)).setText(rInfo.resp);
+                        break;
+                    case 15:
+                        ((EditText) view.findViewById(R.id.m0q15)).setText(rInfo.resp);
+                        break;
+                    case 16:
+                        ((EditText) view.findViewById(R.id.m0q16)).setText(rInfo.resp);
+                        break;
+                    case 17:
+                        ((EditText) view.findViewById(R.id.m0q17)).setText(rInfo.resp);
+                        break;
+                    case 18:
+                        ((EditText) view.findViewById(R.id.m0q18)).setText(rInfo.resp);
+                        break;
+                    case 19:
+                        ((Spinner) view.findViewById(R.id.m0q19)).setSelection(
+                                MainActivity.get_position_from_array(getResources().
+                                        getStringArray(R.array.m0q19), rInfo.resp)
+                        );
+                        break;
+                    case 20:
+                        ((EditText) view.findViewById(R.id.m0q20)).setText(rInfo.resp);
+                        break;
+                    case 21:
+                        ((EditText) view.findViewById(R.id.m0q21)).setText(rInfo.resp);
+                        break;
+                    case 22:
+                        ((EditText) view.findViewById(R.id.m0q22)).setText(rInfo.resp);
+                        break;
+                    case 23:
+                        ((EditText) view.findViewById(R.id.m0q23)).setText(rInfo.resp);
+                        break;
+                    case 24:
+                        ((EditText) view.findViewById(R.id.m0q24)).setText(rInfo.resp);
+                        break;
+                }
+        }
     }
 }

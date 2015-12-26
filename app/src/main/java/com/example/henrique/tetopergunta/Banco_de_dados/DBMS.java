@@ -5,7 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -49,6 +51,7 @@ public class DBMS {
     private static final String M1Q8 = "m1q8";
     private static final String M1Q9 = "m1q9";
     private static final String M1Q10 = "m1q10";
+    private static final String M1Q11 = "m1q11";
 
     private static final String M2Q1 = "m2q1";
     private static final String M2Q2 = "m2q2";
@@ -129,11 +132,14 @@ public class DBMS {
     private static final String M6Q28 = "m6q28";
 
     private static final String ID = "id";
+    private static final String N_SERIE = "n_serie";
 
-    private static final String TABLE_NAME = "DADOS_FAMILIA";
+    private static final String MAIN_TABLE_NAME = "DADOS_FAMILIA";
+    private static final String MOD1_TABLE_NAME = "DADOS_MOD1";
+
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 6;
-    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
+    private static final int DB_VERSION = 9;
+    private static final String CREATE_MAIN_TABLE = "CREATE TABLE IF NOT EXISTS " + MAIN_TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "
             + M0Q4 +    " TEXT, " + M0Q5 +  " TEXT, " + M0Q6 +  " TEXT, "
@@ -143,10 +149,7 @@ public class DBMS {
             + M0Q16 +   " TEXT, " + M0Q17 + " TEXT, " + M0Q18 + " TEXT, "
             + M0Q19 +   " TEXT, " + M0Q20 + " TEXT, " + M0Q21 +  " TEXT, "
             + M0Q22 +   " TEXT, " + M0Q23 +  " TEXT, "
-            + M0Q24 +   " TEXT, " + M1Q1 +  " TEXT, "
-            + M1Q2 +  " TEXT, " + M1Q3 +  " TEXT, " + M1Q4 +    " TEXT, "
-            + M1Q5 +  " TEXT, " + M1Q6 +  " TEXT, " + M1Q7 +    " TEXT, "
-            + M1Q8 +  " TEXT, " + M1Q9 +  " TEXT, " + M1Q10 +   " TEXT, "
+            + M0Q24 +   " TEXT, " + M1Q10 +   " TEXT, "
             + M2Q1 +  " TEXT, " + M2Q2 +  " TEXT, "
             + M2Q3 +    " TEXT, " + M2Q4 +  " TEXT, " + M2Q5 +  " TEXT, "
             + M2Q6 +    " TEXT, " + M2Q7 +  " TEXT, " + M2Q8 +  " TEXT, "
@@ -175,6 +178,15 @@ public class DBMS {
             + M6Q28 +   " TEXT"
             + ");";
 
+    private static final String CREATE_TABLE_MOD1 = "CREATE TABLE IF NOT EXISTS "
+            + MOD1_TABLE_NAME + "("
+            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + N_SERIE +  " TEXT, "
+            + M1Q1 + " TEXT, " + M1Q2 +  " TEXT, " + M1Q3 +  " TEXT, "
+            + M1Q4 + " TEXT, " + M1Q5 +  " TEXT, " + M1Q6 +  " TEXT, "
+            + M1Q7 + " TEXT, " + M1Q8 +  " TEXT, " + M1Q9 +  " TEXT, "
+            + M1Q11+ " TEXT"
+            +");";
+
     private static DataBaseHelper dataBaseHelper;
     private static SQLiteDatabase db;
 
@@ -185,13 +197,16 @@ public class DBMS {
         }
 
         @Override
-        public void onCreate(SQLiteDatabase db) {
-            db.execSQL(CREATE_TABLE);
+        public void onCreate(SQLiteDatabase db)
+        {
+            db.execSQL(CREATE_MAIN_TABLE);
+            db.execSQL(CREATE_TABLE_MOD1);
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + MAIN_TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + MOD1_TABLE_NAME);
             onCreate(db);
         }
     }
@@ -200,93 +215,137 @@ public class DBMS {
         dataBaseHelper = new DataBaseHelper(context, DB_NAME, null, DB_VERSION);
     }
 
-    public long create (Respostas respostas) {
+    public void create (Respostas respostas) {
         db = dataBaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
+        ContentValues main_values = new ContentValues();
+        ContentValues mod1_values = new ContentValues();
 
-        for (int i = 0; i < Respostas.MODULES; i++)
-            for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++)
-                contentValues.put("M" + i + "Q" + j, respostas.getAnswers()[i][j]);
+        for (RespostasInfo rInfo : respostas.getMainAnswers()) {
+            main_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+        } db.insert(MAIN_TABLE_NAME, null, main_values);
 
 
-        long id = db.insert(TABLE_NAME, null, contentValues);
+        for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
+            for (RespostasInfo rInfo : list) {
+                mod1_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+            } mod1_values.put(N_SERIE, respostas.getNSerie());
+
+            db.insert(MOD1_TABLE_NAME, null, mod1_values);
+        }
 
         db.close();
-
-        return id;
     }
 
     public Respostas retrieve(String n_serie) {
         db = dataBaseHelper.getReadableDatabase();
-        String select = "SELECT * FROM " + TABLE_NAME + " WHERE " + M0Q1 + " = ?";
 
-        Cursor cursor = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
+        String select = "SELECT * FROM " + MAIN_TABLE_NAME + " WHERE " + M0Q1 + " = ?";
+        Cursor cursor_main = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
+
+        select = "SELECT * FROM " + MOD1_TABLE_NAME + " WHERE " + N_SERIE + " = ?";
+        Cursor cursor_mod1 = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
+
+        Log.d("mod1 size no db", String.valueOf(cursor_mod1.getCount()));
 
         Respostas respostas = new Respostas();
+        int modulo, n_ques;
+        String resp;
+        RespostasInfo rInfo;
+        String[] columns_name;
 
-        if(cursor.moveToFirst()) {
+        if(cursor_main.moveToFirst()) {
             do {
-                String[] resp = new String[Respostas.MAX_N_QUESTIONS + 1];
-                for (int i = 0; i < Respostas.MODULES; i++) {
-                    for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++)
-                        resp[j] = cursor.getString(cursor.getColumnIndex("m" + i + "q" + j));
+                respostas.setNSerie(n_serie);
 
-                    respostas.setAnswers(i, resp);
+                columns_name = cursor_main.getColumnNames();
+
+                for (int i = 1; i < cursor_main.getColumnCount(); i++) {
+                    modulo = Integer.valueOf(columns_name[i].substring(1, 2));
+                    n_ques = Integer.valueOf(columns_name[i].substring(3));
+                    resp = cursor_main.getString(i);
+
+                    rInfo = new RespostasInfo(modulo, n_ques, resp);
+                    respostas.setAnswers(rInfo, Respostas.Modulos.MAIN, 0, false);
                 }
-            } while (cursor.moveToNext());
+            } while (cursor_main.moveToNext());
+        }
+
+        int n = 0;
+        if(cursor_mod1.moveToFirst()) {
+            do {
+                columns_name = cursor_mod1.getColumnNames();
+
+                for (int i = 2; i < cursor_mod1.getColumnCount(); i++) {
+                    modulo = Integer.valueOf(columns_name[i].substring(1, 2));
+                    n_ques = Integer.valueOf(columns_name[i].substring(3));
+                    resp = cursor_mod1.getString(i);
+
+                    rInfo = new RespostasInfo(modulo, n_ques, resp);
+                    respostas.setAnswers(rInfo, Respostas.Modulos.MODULO_1, n, false);
+                }
+
+                n++;
+            } while (cursor_mod1.moveToNext());
         }
 
         db.close();
-        cursor.close();
+
+        cursor_main.close();
+        cursor_mod1.close();
 
         return respostas;
     }
 
     public void update (Respostas respostas) {
         db = dataBaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
+        ContentValues main_values = new ContentValues();
+        ContentValues mod1_values;
 
-        for (int i = 0; i < Respostas.MODULES; i++)
-            for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++)
-                contentValues.put("M" + i + "Q" + j, respostas.getAnswers()[i][j]);
+        for (RespostasInfo rInfo : respostas.getMainAnswers()) {
+            main_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+        } db.update(MAIN_TABLE_NAME, main_values, M0Q1 + " = ?", new String[]{respostas.getNSerie()});
 
-        db.update(TABLE_NAME, contentValues, M0Q1 + " = ?",
-                new String[]{respostas.getAnswers()[0][1]});
+
+        for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
+            mod1_values = new ContentValues();
+
+            for (RespostasInfo rInfo : list) {
+                mod1_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+            } mod1_values.put(N_SERIE, respostas.getNSerie());
+
+            db.update(MOD1_TABLE_NAME, mod1_values, N_SERIE + "= ?", new String[]{respostas.getNSerie()});
+        }
+
         db.close();
     }
 
     public void delete (String n_serie) {
         db = dataBaseHelper.getWritableDatabase();
-        db.delete(TABLE_NAME, M0Q1 + " = ?", new String[]{String.valueOf(n_serie)});
+        db.delete(MAIN_TABLE_NAME, M0Q1 + " = ?", new String[]{n_serie});
+        db.delete(MOD1_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
         db.close();
     }
 
     public List<Respostas> getLista() {
         db = dataBaseHelper.getReadableDatabase();
-        String select = "SELECT * FROM " + TABLE_NAME;
 
-        Cursor cursor = db.rawQuery(select, null);
+        Cursor main_cursor = db.rawQuery("SELECT " + M0Q1 + " FROM " + MAIN_TABLE_NAME, null);
 
         List<Respostas> lista = new LinkedList<>();
 
-        if(cursor.moveToFirst()) {
+        if(main_cursor.moveToFirst()) {
             do {
                 Respostas respostas = new Respostas();
-                String[] resp = new String[Respostas.MAX_N_QUESTIONS + 1];
-                for (int i = 0; i < Respostas.MODULES; i++) {
-                    for (int j = 1; j < Respostas.QUESTIONS_PER_MODULE[i] + 1; j++)
-                        resp[j] = cursor.getString(j);
 
-                    respostas.setAnswers(i, resp);
-                }
-
-                respostas.setId(cursor.getLong(0));
+                String n_serie = main_cursor.getString(main_cursor.getColumnIndex(M0Q1));
+                respostas.setNSerie(n_serie);
+                respostas.setId(main_cursor.getLong(0));
                 lista.add(respostas);
-            } while (cursor.moveToNext());
+            } while (main_cursor.moveToNext());
         }
 
         db.close();
-        cursor.close();
+        main_cursor.close();
 
         return lista;
     }

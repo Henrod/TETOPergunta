@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    android:id="@+id/mod1_new_person"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m1q1"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/m1q1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/m1q2"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/m1q2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:entries="@array/m1q2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/m1q3"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/m1q3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:entries="@array/m1q3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/m1q4"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/m1q4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/m1q5"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/m1q5"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:entries="@array/m1q5"/>
+
+        <Space
+            android:layout_height="20dp"
+            android:layout_width="match_parent"/>
+
+    </TableLayout>
+
+</TableLayout>

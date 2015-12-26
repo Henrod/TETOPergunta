@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Respostas resposta_get = respostasList.get(position);
                 Intent dados = new Intent(MainActivity.this, VerDados.class);
 
-                dados.putExtra("id", resposta_get.getAnswers()[0][1]);
+                dados.putExtra("id", resposta_get.getNSerie());
 
                 startActivity(dados);
             }
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
 
-            viewHolder.textoLista.setText(respostasList.get(position).getAnswers()[0][1]);
+            viewHolder.textoLista.setText(respostasList.get(position).getNSerie());
 
             return convertView;
         }
@@ -119,5 +119,13 @@ public class MainActivity extends AppCompatActivity {
         class ViewHolder {
             TextView textoLista;
         }
+    }
+
+    public static int get_position_from_array(String[] array, String data){
+        for(int i = 0; i < array.length; i++)
+            if (array[i].contentEquals(data))
+                return i;
+
+        return 0;
     }
 }
