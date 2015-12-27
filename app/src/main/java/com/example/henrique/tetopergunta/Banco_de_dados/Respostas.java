@@ -1,12 +1,9 @@
 package com.example.henrique.tetopergunta.Banco_de_dados;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static com.example.henrique.tetopergunta.Banco_de_dados.Respostas.Modulos.MAIN;
-import static com.example.henrique.tetopergunta.Banco_de_dados.Respostas.Modulos.MODULO_1;
 
 /**
  * Created by henrique on 09/10/15.
@@ -18,6 +15,7 @@ public class Respostas {
 
     private ArrayList<RespostasInfo> main_answers;
     private LinkedList<ArrayList<RespostasInfo>> mod1_answers;
+    private LinkedList<ArrayList<RespostasInfo>> mod2_answers;
 
     private String n_serie;
     private long id = 0;
@@ -25,6 +23,7 @@ public class Respostas {
     public Respostas () {
         main_answers = new ArrayList<>();
         mod1_answers = new LinkedList<>();
+        mod2_answers = new LinkedList<>();
     }
 
     public void setNSerie(String n_serie) {
@@ -43,37 +42,17 @@ public class Respostas {
                     main_answers.add(respostasInfo);
                 break;
 
-            case MODULO_1:
-                while (mod1_answers.size() <= mod_index)
-                    mod1_answers.add(new ArrayList<RespostasInfo>());
-
-                Log.d("size infos", mod1_answers.size() + " " + mod_index + " " +
-                        respostasInfo.modulo + " " + respostasInfo.n_questao + " " + respostasInfo.resp);
+            default:
+                LinkedList<ArrayList<RespostasInfo>> answers = getModAnswers(modulos);
+                while (answers.size() <= mod_index)
+                    answers.add(new ArrayList<RespostasInfo>());
 
                 if (update) {
-                    getRespFromIndex(MODULO_1, respostasInfo.modulo, respostasInfo.n_questao, mod_index).
+                    getRespFromIndex(modulos, respostasInfo.modulo, respostasInfo.n_questao, mod_index).
                             resp = respostasInfo.resp;
                 } else
-                    mod1_answers.get(mod_index).add(respostasInfo);
+                    answers.get(mod_index).add(respostasInfo);
                 break;
-
-            case MODULO_2:
-                break;
-
-            case MODULO_3:
-                break;
-
-            case MODULO_4:
-                break;
-
-            case MODULO_5:
-                break;
-
-            case MODULO_6:
-                break;
-
-            default:
-
         }
     }
 
@@ -87,6 +66,7 @@ public class Respostas {
                 return mod1_answers;
 
             case MODULO_2:
+                return mod2_answers;
 
             case MODULO_3:
 

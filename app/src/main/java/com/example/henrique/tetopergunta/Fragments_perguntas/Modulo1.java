@@ -2,7 +2,6 @@ package com.example.henrique.tetopergunta.Fragments_perguntas;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,18 +21,18 @@ public class Modulo1 extends Fragment {
 
     private View view;
     private ViewGroup insertPoint;
-    private Respostas _respostas;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
-
         view = inflater.inflate(R.layout.activity_modulo1, container, false);
 
         insertPoint = (ViewGroup) view.findViewById(R.id.mod1_table);
+        InserirDados.modulo2.inflate_insertion_point();
 
         view.findViewById(R.id.mod1_add_person).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                InserirDados.not_a_new_person = false;
                 View view = inflater.inflate(R.layout.mod1_child, container, false);
                 insertPoint.addView(view);
             }
@@ -45,6 +44,9 @@ public class Modulo1 extends Fragment {
     }
 
     public void set_respostas(Respostas respostas, LayoutInflater inflater, ViewGroup container) {
+        ArrayList<RespostasInfo> main_list = respostas.getMainAnswers();
+        ((EditText) view.findViewById(R.id.m1q10)).setText(main_list.get(24).resp);
+
         LinkedList<ArrayList<RespostasInfo>> mod1_list = respostas.getModAnswers(Respostas.Modulos.MODULO_1);
 
         for (ArrayList<RespostasInfo> resps : mod1_list) {
@@ -77,16 +79,43 @@ public class Modulo1 extends Fragment {
                                         getResources().getStringArray(R.array.m1q5), rInfo.resp)
                         );
                         break;
+                    case 6:
+                        ((EditText) view.findViewById(R.id.m1q6)).setText(rInfo.resp);
+                        break;
+                    case 7:
+                        ((Spinner) view.findViewById(R.id.m1q7)).setSelection(
+                                MainActivity.get_position_from_array(
+                                        getResources().getStringArray(R.array.m1q7), rInfo.resp)
+                        );
+                        break;
+                    case 8:
+                        ((Spinner) view.findViewById(R.id.m1q8)).setSelection(
+                                MainActivity.get_position_from_array(
+                                        getResources().getStringArray(R.array.m1q8), rInfo.resp)
+                        );
+                        break;
+                    case 9:
+                        ((Spinner) view.findViewById(R.id.m1q9)).setSelection(
+                                MainActivity.get_position_from_array(
+                                        getResources().getStringArray(R.array.m1q9), rInfo.resp)
+                        );
+                        break;
+                    case 11:
+                        ((EditText) view.findViewById(R.id.m1q11)).setText(rInfo.resp);
+                        break;
                 }
             }
         }
     }
 
     public void save() {
-        for (int i = 1; i < insertPoint.getChildCount(); i++) {
-            View curr_view = insertPoint.getChildAt(i);
+        String m1q10 = ((EditText) view.findViewById(R.id.m1q10)).getText().toString();
+        InserirDados.respostas.setAnswers(
+                new RespostasInfo(1, 10, m1q10), Respostas.Modulos.MAIN, 0, InserirDados.insert_data
+        );
 
-            Log.d("size mod1 a salvar", String.valueOf(InserirDados.respostas.getModAnswers(Respostas.Modulos.MODULO_1).size()));
+        for (int i = 0; i < insertPoint.getChildCount(); i++) {
+            View curr_view = insertPoint.getChildAt(i);
 
             String[] answers = { "---",
                     ((EditText) curr_view.findViewById(R.id.m1q1)).getText().toString(),
@@ -94,14 +123,24 @@ public class Modulo1 extends Fragment {
                     ((Spinner) curr_view.findViewById(R.id.m1q3)).getSelectedItem().toString(),
                     ((EditText) curr_view.findViewById(R.id.m1q4)).getText().toString(),
                     ((Spinner) curr_view.findViewById(R.id.m1q5)).getSelectedItem().toString(),
+                    ((EditText) curr_view.findViewById(R.id.m1q6)).getText().toString(),
+                    ((Spinner) curr_view.findViewById(R.id.m1q7)).getSelectedItem().toString(),
+                    ((Spinner) curr_view.findViewById(R.id.m1q8)).getSelectedItem().toString(),
+                    ((Spinner) curr_view.findViewById(R.id.m1q9)).getSelectedItem().toString(),
+                    "---",
+                    ((EditText) curr_view.findViewById(R.id.m1q11)).getText().toString(),
             };
 
-            for (int j = 1; j < 6; j++) {
-                InserirDados.respostas.setAnswers(
-                        new RespostasInfo(1, j, answers[j]), Respostas.Modulos.MODULO_1, i - 1, InserirDados.insert_data
-                );
+            for (int j = 1; j < 12; j++) {
+                if (j != 10) {
+                    RespostasInfo curr_resp = new RespostasInfo(1, j, answers[j]);
+
+                    InserirDados.respostas.setAnswers(
+                            curr_resp, Respostas.Modulos.MODULO_1, i,
+                            InserirDados.insert_data && InserirDados.not_a_new_person
+                    );
+                }
             }
         }
     }
-
 }

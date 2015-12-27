@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    android:id="@+id/mod1_new_person"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/TETOAppTheme">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q1"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q2"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q3"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q3"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q3"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q4"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q4"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q4"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q5"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q5"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q5"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q6"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/m2q6"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:ems="10"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q7"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q7"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q7"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m2q8"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m2q8"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m2q8"/>
+
+    <Space
+    android:layout_height="20dp"
+    android:layout_width="match_parent"/>
+
+</TableLayout>

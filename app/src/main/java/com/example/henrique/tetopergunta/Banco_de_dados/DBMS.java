@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -136,6 +135,7 @@ public class DBMS {
 
     private static final String MAIN_TABLE_NAME = "DADOS_FAMILIA";
     private static final String MOD1_TABLE_NAME = "DADOS_MOD1";
+    private static final String MOD2_TABLE_NAME = "DADOS_MOD2";
 
     private static final String DB_NAME = "TETO_DB";
     private static final int DB_VERSION = 9;
@@ -150,9 +150,6 @@ public class DBMS {
             + M0Q19 +   " TEXT, " + M0Q20 + " TEXT, " + M0Q21 +  " TEXT, "
             + M0Q22 +   " TEXT, " + M0Q23 +  " TEXT, "
             + M0Q24 +   " TEXT, " + M1Q10 +   " TEXT, "
-            + M2Q1 +  " TEXT, " + M2Q2 +  " TEXT, "
-            + M2Q3 +    " TEXT, " + M2Q4 +  " TEXT, " + M2Q5 +  " TEXT, "
-            + M2Q6 +    " TEXT, " + M2Q7 +  " TEXT, " + M2Q8 +  " TEXT, "
             + M3Q1 +    " TEXT, " + M3Q2 +  " TEXT, " + M3Q3 +  " TEXT, "
             + M3Q4 +    " TEXT, " + M3Q5 +  " TEXT, " + M3Q6 +  " TEXT, "
             + M3Q7 +    " TEXT, " + M3Q8 +  " TEXT, " + M3Q9 +  " TEXT, "
@@ -187,6 +184,15 @@ public class DBMS {
             + M1Q11+ " TEXT"
             +");";
 
+    private static final String CREATE_TABLE_MOD2 = "CREATE TABLE IF NOT EXISTS "
+            + MOD2_TABLE_NAME + "("
+            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + N_SERIE +  " TEXT, "
+            + M2Q1 + " TEXT, " + M2Q2 +  " TEXT, " + M2Q3 +  " TEXT, "
+            + M2Q4 + " TEXT, " + M2Q5 +  " TEXT, " + M2Q6 +  " TEXT, "
+            + M2Q7 + " TEXT, " + M2Q8 + " TEXT"
+            +");";
+
+
     private static DataBaseHelper dataBaseHelper;
     private static SQLiteDatabase db;
 
@@ -201,12 +207,14 @@ public class DBMS {
         {
             db.execSQL(CREATE_MAIN_TABLE);
             db.execSQL(CREATE_TABLE_MOD1);
+            db.execSQL(CREATE_TABLE_MOD2);
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             db.execSQL("DROP TABLE IF EXISTS " + MAIN_TABLE_NAME);
             db.execSQL("DROP TABLE IF EXISTS " + MOD1_TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + MOD2_TABLE_NAME);
             onCreate(db);
         }
     }
@@ -233,6 +241,14 @@ public class DBMS {
             db.insert(MOD1_TABLE_NAME, null, mod1_values);
         }
 
+        for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_2)) {
+            for (RespostasInfo rInfo : list) {
+                mod1_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+            } mod1_values.put(N_SERIE, respostas.getNSerie());
+
+            db.insert(MOD2_TABLE_NAME, null, mod1_values);
+        }
+
         db.close();
     }
 
@@ -245,7 +261,8 @@ public class DBMS {
         select = "SELECT * FROM " + MOD1_TABLE_NAME + " WHERE " + N_SERIE + " = ?";
         Cursor cursor_mod1 = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
 
-        Log.d("mod1 size no db", String.valueOf(cursor_mod1.getCount()));
+        select = "SELECT * FROM " + MOD2_TABLE_NAME + " WHERE " + N_SERIE + " = ?";
+        Cursor cursor_mod2 = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
 
         Respostas respostas = new Respostas();
         int modulo, n_ques;
@@ -283,15 +300,32 @@ public class DBMS {
                     rInfo = new RespostasInfo(modulo, n_ques, resp);
                     respostas.setAnswers(rInfo, Respostas.Modulos.MODULO_1, n, false);
                 }
-
                 n++;
             } while (cursor_mod1.moveToNext());
+        }
+
+        n = 0;
+        if(cursor_mod2.moveToFirst()) {
+            do {
+                columns_name = cursor_mod2.getColumnNames();
+
+                for (int i = 2; i < cursor_mod2.getColumnCount(); i++) {
+                    modulo = Integer.valueOf(columns_name[i].substring(1, 2));
+                    n_ques = Integer.valueOf(columns_name[i].substring(3));
+                    resp = cursor_mod2.getString(i);
+
+                    rInfo = new RespostasInfo(modulo, n_ques, resp);
+                    respostas.setAnswers(rInfo, Respostas.Modulos.MODULO_2, n, false);
+                }
+                n++;
+            } while (cursor_mod2.moveToNext());
         }
 
         db.close();
 
         cursor_main.close();
         cursor_mod1.close();
+        cursor_mod2.close();
 
         return respostas;
     }
@@ -300,12 +334,14 @@ public class DBMS {
         db = dataBaseHelper.getWritableDatabase();
         ContentValues main_values = new ContentValues();
         ContentValues mod1_values;
+        ContentValues mod2_values;
 
         for (RespostasInfo rInfo : respostas.getMainAnswers()) {
             main_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
         } db.update(MAIN_TABLE_NAME, main_values, M0Q1 + " = ?", new String[]{respostas.getNSerie()});
 
 
+        db.delete(MOD1_TABLE_NAME, N_SERIE + "= ?", new String[]{respostas.getNSerie()});
         for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
             mod1_values = new ContentValues();
 
@@ -313,7 +349,18 @@ public class DBMS {
                 mod1_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
             } mod1_values.put(N_SERIE, respostas.getNSerie());
 
-            db.update(MOD1_TABLE_NAME, mod1_values, N_SERIE + "= ?", new String[]{respostas.getNSerie()});
+            db.insert(MOD1_TABLE_NAME, null, mod1_values);
+        }
+
+        db.delete(MOD2_TABLE_NAME, N_SERIE + "= ?", new String[]{respostas.getNSerie()});
+        for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_2)) {
+            mod2_values = new ContentValues();
+
+            for (RespostasInfo rInfo : list) {
+                mod2_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+            } mod2_values.put(N_SERIE, respostas.getNSerie());
+
+            db.insert(MOD2_TABLE_NAME, null, mod2_values);
         }
 
         db.close();
@@ -323,6 +370,7 @@ public class DBMS {
         db = dataBaseHelper.getWritableDatabase();
         db.delete(MAIN_TABLE_NAME, M0Q1 + " = ?", new String[]{n_serie});
         db.delete(MOD1_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
+        db.delete(MOD2_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
         db.close();
     }
 

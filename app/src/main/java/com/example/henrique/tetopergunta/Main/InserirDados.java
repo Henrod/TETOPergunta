@@ -32,18 +32,19 @@ public class InserirDados extends AppCompatActivity {
     private static SimpleTabsAdapter tabsAdapter;
 
     private static Toolbar toolbar;
-    private static Modulo0 modulo0;
-    private static Modulo1 modulo1;
-    private static Modulo2 modulo2;
-    private static Modulo3 modulo3;
+    public static Modulo0 modulo0;
+    public static Modulo1 modulo1;
+    public static Modulo2 modulo2;
+    public static Modulo3 modulo3;
 
     public static boolean insert_data = false;
+    public static boolean not_a_new_person;
 
-
-    @Override
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dados);
+        InserirDados.not_a_new_person = true;
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

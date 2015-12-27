@@ -78,5 +78,126 @@
             <item>12- Outro familiar</item>
             <item>13- Não familiar</item>
         </array>
+    <string name="m1q6">(1.06) Por favor, indique o RG de [NOME] (00-NÃO TEM, **-NÃO SABE, ##-NÃO RESPONDEU)</string>
+    <string name="m1q7">(1.07) [NOME] está inscrito no cadastro único?</string>
+        <array name="m1q7">
+            <item> </item>
+            <item>Sim</item>
+            <item>Não</item>
+        </array>
+    <string name="m1q8">(1.08) De que estado [NOME] vem?</string>
+        <array name="m1q8">
+            <item> </item>
+            <item>1- Acre</item>
+            <item>2- Alagoas</item>
+            <item>3- Amapá</item>
+            <item>4- Amazonas</item>
+            <item>5- Bahia</item>
+            <item>6- Ceará</item>
+            <item>7- Distrito Federal</item>
+            <item>8- Espírito Santo</item>
+            <item>9- Goiás</item>
+            <item>10- Maranhão</item>
+            <item>11- Mato Grosso</item>
+            <item>12- Mato Grosso do Sul</item>
+            <item>13- Minas Gerais</item>
+            <item>14- Pará</item>
+            <item>15- Paraíba</item>
+            <item>16- Paraná</item>
+            <item>17- Pernambuco</item>
+            <item>18- Piauí</item>
+            <item>19- Rio de Janeiro</item>
+            <item>20- Rio Grande do Norte</item>
+            <item>21- Rio Grande do Sul</item>
+            <item>22- Rondônia</item>
+            <item>23- Roraima</item>
+            <item>24- Santa Catarina</item>
+            <item>25- São Paulo</item>
+            <item>26- Sergipe</item>
+            <item>27- Tocantins</item>
+            <item>28- Estrangeiro</item>
+        </array>
+    <string name="m1q9">(1.09) De qual raça ou cor [NOME] se enxerga?</string>
+        <array name="m1q9">
+            <item> </item>
+            <item>1- Preta</item>
+            <item>2- Branca</item>
+            <item>3- Parda</item>
+            <item>4- Amarela (oriental)</item>
+            <item>5- Indígena</item>
+            <item>6- Outro</item>
+        </array>
+    <string name="m1q10">(1.10) Quantas famílias (núcleos familiares) diferentes vivem nesta casa?</string>
+    <string name="m1q11">(1.11) A que núcleo familiar pertence [NOME]? (1- Principal, 2- Segundo, 3- Terceiro) </string>
+
+    <string name="m2q1">(2.01) Até que série [NOME] estudou? Qual é o nível de educação mais alto que [NOME] completou?</string>
+        <array name="m2q1">
+            <item> </item>
+            <item>1- Não completou nenhum nível escolar</item>
+            <item>2- Pré-escola</item>
+            <item>3- Ensino funcamental I (4ª série/5º ano)</item>
+            <item>4- Ensino funcamental II (8ª série/9º ano)</item>
+            <item>5- Ensino médio </item>
+            <item>6- Técnico</item>
+            <item>7- Curso profissionalizante</item>
+            <item>8- Universitário</item>
+            <item>9- Outro</item>
+        </array>
+    <string name="m2q2">(2.02) [NOME] sabe ler e escrever?</string>
+        <array name="m2q2">
+            <item> </item>
+            <item>1- Sim, lê e escreve</item>
+            <item>2- Não, apenas lê</item>
+            <item>3- Não, apenas escreve</item>
+            <item>4- Não, apenas assina o próprio nome</item>
+            <item>5- Não, nenhum</item>
+        </array>
+    <string name="m2q3">(2.03) Atualmente [NOME] estuda? Inclusive creche e pré-escola)</string>
+        <array name="m2q3">
+            <item> </item>
+            <item>1- Sim</item>
+            <item>2- Não</item>
+        </array>
+    <string name="m2q4">(2.04) Em que tipo de estabelecimento de ensino (inclusive pré-escola) [NOME] estuda?</string>
+        <array name="m2q4">
+            <item> </item>
+            <item>1- Municipal</item>
+            <item>2- Estadual</item>
+            <item>3- Federal/Técnico</item>
+            <item>4- Privado</item>
+            <item>5- Outro</item>
+        </array>
+    <string name="m2q5">(2.05) Você diria que o lugar onde [NOME] estuda está:</string>
+        <array name="m2q5">
+            <item> </item>
+            <item>1- Perto</item>
+            <item>2- Nem perto nem longe</item>
+            <item>3- Longe</item>
+        </array>
+    <string name="m2q6">(2.06) Quanto tempo [NOME] leva para chegar ao local de estudo? (responder em minutos)</string>
+    <string name="m2q7">(2.07) Qual o principal meio de tranporte [NOME] utiliza para chegar ao local de estudo?</string>
+        <array name="m2q7">
+            <item> </item>
+            <item>1- A pé/bicicleta</item>
+            <item>2- Transporte pbúlico (ônibus, trem, metrô)</item>
+            <item>3- Transporte coletivo privato (van, fretado, taxi)</item>
+            <item>4- Transporte privado (carro, moto, carona)</item>
+        </array>
+    <string name="m2q8">(2.08) Se a resposta de 2.03 for sim, qual a principal razão pela qual [NOME] nã estuda?</string>
+        <array name="m2q8">
+            <item> </item>
+            <item>1- Nunca frequentou</item>
+            <item>2- Não tem idade suficiente</item>
+            <item>3- Falta de dinheiro</item>
+            <item>4- Falta de tempo/trabalha</item>
+            <item>5- Ajuda nas tarefas do lar</item>
+            <item>6- Requer estabelecimento especial</item>
+            <item>7- Maternidade ou paternidade</item>
+            <item>8- Não há transporte/fica muito longe</item>
+            <item>9- Não tem interesse</item>
+            <item>10- Problemas de nota/foi expluso</item>
+            <item>11- Considera que terminou os estudos</item>
+            <item>12- Outras razões</item>
+        </array>
 
 </resources>

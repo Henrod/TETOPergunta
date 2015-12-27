@@ -2,7 +2,6 @@ package com.example.henrique.tetopergunta.Fragment_show_perguntas;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,10 +42,11 @@ public class Respostas_modulo1 extends Fragment {
     }
 
     private void setTextViewsWithData(LayoutInflater inflater, ViewGroup container) {
+        ArrayList<RespostasInfo> main_list = VerDados.respostas.getMainAnswers();
+        ((TextView) view.findViewById(R.id.tv_m1q10)).setText(main_list.get(24).resp);
+
         LinkedList<ArrayList<RespostasInfo>> list = VerDados.respostas.
                 getModAnswers(Respostas.Modulos.MODULO_1);
-
-        Log.d("number child resp", String.valueOf(list.size()));
 
         for (ArrayList<RespostasInfo> resps_por_pessoa : list) {
             View new_view = inflater.inflate(R.layout.mod1_child_resps, container, false);
@@ -68,6 +68,21 @@ public class Respostas_modulo1 extends Fragment {
                         break;
                     case 5:
                         ((TextView) new_view.findViewById(R.id.tv_m1q5)).setText(rInfo.resp);
+                        break;
+                    case 6:
+                        ((TextView) new_view.findViewById(R.id.tv_m1q6)).setText(rInfo.resp);
+                        break;
+                    case 7:
+                        ((TextView) new_view.findViewById(R.id.tv_m1q7)).setText(rInfo.resp);
+                        break;
+                    case 8:
+                        ((TextView) new_view.findViewById(R.id.tv_m1q8)).setText(rInfo.resp);
+                        break;
+                    case 9:
+                        ((TextView) new_view.findViewById(R.id.tv_m1q9)).setText(rInfo.resp);
+                        break;
+                    case 11:
+                        ((TextView) new_view.findViewById(R.id.tv_m1q11)).setText(rInfo.resp);
                         break;
                 }
         }
