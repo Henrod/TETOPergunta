@@ -1,17 +1,24 @@
 package com.example.henrique.tetopergunta.Fragment_show_perguntas;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.Banco_de_dados.RespostasInfo;
+import com.example.henrique.tetopergunta.Main.VerDados;
 import com.example.henrique.tetopergunta.R;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Respostas_modulo2 extends Fragment {
 
     private View view;
+    private ViewGroup insertPoint;
 
     public Respostas_modulo2() {
         // Required empty public constructor
@@ -27,24 +34,49 @@ public class Respostas_modulo2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_respostas_modulo2, container, false);
+        insertPoint = (ViewGroup) view.findViewById(R.id.mod2_table);
 
+        setTextViewsWithData(inflater, container);
 
 
         return view;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    private void setTextViewsWithData(LayoutInflater inflater, ViewGroup container) {
+        LinkedList<ArrayList<RespostasInfo>> list = VerDados.respostas.
+                getModAnswers(Respostas.Modulos.MODULO_2);
+
+        for (ArrayList<RespostasInfo> resps_por_pessoa : list) {
+            View new_view = inflater.inflate(R.layout.mod2_child_resps, container, false);
+            insertPoint.addView(new_view);
+
+            for (RespostasInfo rInfo : resps_por_pessoa)
+                switch (rInfo.n_questao) {
+                    case 1:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q1)).setText(rInfo.resp);
+                        break;
+                    case 2:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q2)).setText(rInfo.resp);
+                        break;
+                    case 3:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q3)).setText(rInfo.resp);
+                        break;
+                    case 4:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q4)).setText(rInfo.resp);
+                        break;
+                    case 5:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q5)).setText(rInfo.resp);
+                        break;
+                    case 6:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q6)).setText(rInfo.resp);
+                        break;
+                    case 7:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q7)).setText(rInfo.resp);
+                        break;
+                    case 8:
+                        ((TextView) new_view.findViewById(R.id.tv_m2q8)).setText(rInfo.resp);
+                        break;
+                }
+        }
     }
 }

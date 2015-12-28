@@ -47,8 +47,10 @@
     <string name="modulo0_E">E - Instruções básicas</string>
     
 
-    <string name="m1q1">(1.01) Por favor, diga-me os nomes das pessoas que vivem nesta casa. Comece a lista pelo chefe do lar.</string>
-    <string name="m1q2">(1.02) No momento da aplicação desta enquete, este membro da família estava presente?</string>
+    <string name="m1q1">(1.01) Por favor, diga-me os nomes das pessoas que vivem nesta casa. Comece
+        a lista pelo chefe do lar.</string>
+    <string name="m1q2">(1.02) No momento da aplicação desta enquete, este membro da família estava
+        presente?</string>
         <array name="m1q2">
             <item> </item>
             <item>Sim</item>
@@ -78,7 +80,8 @@
             <item>12- Outro familiar</item>
             <item>13- Não familiar</item>
         </array>
-    <string name="m1q6">(1.06) Por favor, indique o RG de [NOME] (00-NÃO TEM, **-NÃO SABE, ##-NÃO RESPONDEU)</string>
+    <string name="m1q6">(1.06) Por favor, indique o RG de [NOME] (00-NÃO TEM, **-NÃO SABE,
+        ##-NÃO RESPONDEU)</string>
     <string name="m1q7">(1.07) [NOME] está inscrito no cadastro único?</string>
         <array name="m1q7">
             <item> </item>
@@ -127,10 +130,13 @@
             <item>5- Indígena</item>
             <item>6- Outro</item>
         </array>
-    <string name="m1q10">(1.10) Quantas famílias (núcleos familiares) diferentes vivem nesta casa?</string>
-    <string name="m1q11">(1.11) A que núcleo familiar pertence [NOME]? (1- Principal, 2- Segundo, 3- Terceiro) </string>
+    <string name="m1q10">(1.10) Quantas famílias (núcleos familiares) diferentes vivem nesta
+        casa?</string>
+    <string name="m1q11">(1.11) A que núcleo familiar pertence [NOME]? (1- Principal, 2- Segundo,
+        3- Terceiro) </string>
 
-    <string name="m2q1">(2.01) Até que série [NOME] estudou? Qual é o nível de educação mais alto que [NOME] completou?</string>
+    <string name="m2q1">(2.01) Até que série [NOME] estudou? Qual é o nível de educação mais alto
+        que [NOME] completou?</string>
         <array name="m2q1">
             <item> </item>
             <item>1- Não completou nenhum nível escolar</item>
@@ -156,9 +162,10 @@
         <array name="m2q3">
             <item> </item>
             <item>1- Sim</item>
-            <item>2- Não</item>
+            <item>2- Não (-> 2.08)</item>
         </array>
-    <string name="m2q4">(2.04) Em que tipo de estabelecimento de ensino (inclusive pré-escola) [NOME] estuda?</string>
+    <string name="m2q4">(2.04) Em que tipo de estabelecimento de ensino (inclusive pré-escola)
+        [NOME] estuda?</string>
         <array name="m2q4">
             <item> </item>
             <item>1- Municipal</item>
@@ -174,16 +181,19 @@
             <item>2- Nem perto nem longe</item>
             <item>3- Longe</item>
         </array>
-    <string name="m2q6">(2.06) Quanto tempo [NOME] leva para chegar ao local de estudo? (responder em minutos)</string>
-    <string name="m2q7">(2.07) Qual o principal meio de tranporte [NOME] utiliza para chegar ao local de estudo?</string>
+    <string name="m2q6">(2.06) Quanto tempo [NOME] leva para chegar ao local de estudo? (responder
+        em minutos)</string>
+    <string name="m2q7">(2.07) Qual o principal meio de tranporte [NOME] utiliza para chegar ao
+        local de estudo?</string>
         <array name="m2q7">
             <item> </item>
-            <item>1- A pé/bicicleta</item>
-            <item>2- Transporte pbúlico (ônibus, trem, metrô)</item>
-            <item>3- Transporte coletivo privato (van, fretado, taxi)</item>
-            <item>4- Transporte privado (carro, moto, carona)</item>
+            <item>1- A pé/bicicleta (-> 3.01)</item>
+            <item>2- Transporte pbúlico (ônibus, trem, metrô) (-> 3.01)</item>
+            <item>3- Transporte coletivo privato (van, fretado, taxi) (-> 3.01)</item>
+            <item>4- Transporte privado (carro, moto, carona) (-> 3.01)</item>
         </array>
-    <string name="m2q8">(2.08) Se a resposta de 2.03 for sim, qual a principal razão pela qual [NOME] nã estuda?</string>
+    <string name="m2q8">(2.08) Se a resposta de 2.03 for sim, qual a principal razão pela qual [NOME]
+        não estuda?</string>
         <array name="m2q8">
             <item> </item>
             <item>1- Nunca frequentou</item>
@@ -199,5 +209,134 @@
             <item>11- Considera que terminou os estudos</item>
             <item>12- Outras razões</item>
         </array>
+
+
+    <string name="m3q1">(3.01) Qual a ocupação atual de [NOME]</string>
+    <string name="m3q2">(3.02) Na semana passada, ou seja, entre segunda-feira e domingo, [NOME]
+        trabalhou (sem considerar as tarefas do lar)?</string>
+        <array name="m3q2">
+            <item> </item>
+            <item>1- Sim</item>
+            <item>2- Não (-> 3.04) </item>
+        </array>
+    <string name="m3q3">(3.03) Em seu trabalho atual, [NOME] tem carteira assinada?</string>
+        <array name="m3q3">
+            <item> </item>
+            <item>1- Sim (-> 3.07)</item>
+            <item>2- Não (-> 3.07)</item>
+        </array>
+    <string name="m3q4">(3.04) [NOME] procurou trabalho ou realizou alguma ação para iniciar uma
+        atividade por conta própria (negócio) nas últimas quatro semanas?</string>
+        <array name="m3q4">
+            <item> </item>
+            <item>1- Sim (-> 3.06)</item>
+            <item>2- Não</item>
+        </array>
+    <string name="m3q5">(3.05) Qual a razão ou razões pelas quais [NOME] não procurou trabalho ou
+    iniciou uma atividade autônoma nas últimas quatro semanas?</string>
+        <array name="m3q5">
+            <item> </item>
+            <item>1- Tarefas do lar</item>
+            <item>2- Não tem com quem deixar os filhos</item>
+            <item>3- Está doente ou tem alguma deficiência</item>
+            <item>4- Está estudando</item>
+            <item>5- Não precisa/quer</item>
+            <item>6- Cansou de procurar</item>
+            <item>7- Outro</item>
+        </array>
+    <string name="m3q6">(3.06) [NOME] está disponível para trabalhar?</string>
+        <array name="m3q6">
+            <item> </item>
+            <item>1- Sim, agora mesmo (-> 3.10)</item>
+            <item>2- Sim, mas não agora (-> 3.10)</item>
+            <item>3- Não (-> 3.10)</item>
+        </array>
+    <string name="m3q7">(3.07) Você diria que o lugar onde [NOME] trabalha está localizado: </string>
+        <array name="m3q7">
+            <item> </item>
+            <item>1- Perto</item>
+            <item>2- Nem perto nem longe</item>
+            <item>3- Longe</item>
+        </array>
+    <string name="m3q8">(3.08) Quanto tempo [NOME] leva para chegar ao local de trabalho? (responder
+        em minutos)</string>
+    <string name="m3q9">(3.09) Qual o principal meio de tranporte [NOME] utiliza para chegar ao
+        local de trabalho?</string>
+        <array name="m3q9">
+            <item> </item>
+            <item>1- A pé/bicicleta (-> 3.01)</item>
+            <item>2- Transporte pbúlico (ônibus, trem, metrô) (-> 3.01)</item>
+            <item>3- Transporte coletivo privato (van, fretado, taxi) (-> 3.01)</item>
+            <item>4- Transporte privado (carro, moto, carona) (-> 3.01)</item>
+        </array>
+    <string name="m3q10">(3.10) Poderia me dizer qual a renda mensal de [NOME] (trabalho ou se faz
+        bico) (00 - Não tem reda, ## - Não respondeu)</string>
+    <string name="m3q11">(3.11) [NOME] recebe algum auxílio financeiro fixo do governo?</string>
+        <array name="m3q11">
+            <item> </item>
+            <item>1- Bolsa família</item>
+            <item>2- Bolsa escola</item>
+            <item>3- Auxílio desemprego</item>
+            <item>4- Renda cidadã</item>
+            <item>5- Outros</item>
+            <item>6- Não recebe</item>
+        </array>
+
+    <string name="m3q12">(3.11) Quanto é este valor mensal?</string>
+
+    <string name="m3q14">(3.14) No mês passado, a renda total do lar incluiu dinheiro enviado por
+        familiares ou amigos?</string>
+    <array name="m3q14">
+        <item> </item>
+        <item>1- Sim</item>
+        <item>2- Não</item>
+        <item>3- ** - Não sabe</item>
+        <item>4- ## - Não respondeu</item>
+    </array>
+
+    <string name="m3q15">(3.15) Atualmente você ou algum integrante do lar mantém alguma dívida,
+        financeira ou crediária?</string>
+    <array name="m3q15">
+        <item> </item>
+        <item>1- Sim</item>
+        <item>2- Não</item>
+        <item>3- ** - Não sabe</item>
+        <item>4- ## - Não respondeu</item>
+    </array>
+
+    <string name="m3q16">(3.16) Nos últimos 3 meses, você diria que vocês gastaram mais, menos ou
+        exatamente o dinheiro que ganharam?</string>
+    <array name="m3q16">
+        <item> </item>
+        <item>1- Mais (-> 3.18)</item>
+        <item>2- Menos (-> 3.17)</item>
+        <item>3- O dinheiro exato (-> módulo 4)</item>
+        <item>3- ** - Não sabe (-> módulo 4)</item>
+        <item>4- ## - Não respondeu (-> módulo 4)</item>
+    </array>
+
+    <string name="m3q17">(3.17) Se vocês não gastaram todo o dinheiro que ganharam significa que
+        sobrou alguma coisa. Como fazem suas economias?</string>
+    <array name="m3q17">
+        <item> </item>
+        <item>1- Não fazemos economias (-> módulo 4)</item>
+        <item>2- Depositam no banco (-> módulo 4)</item>
+        <item>3- Guardam em casa (-> módulo 4)</item>
+        <item>4- Outro (-> módulo 4)</item>
+        <item>5- ** - Não sabe (-> módulo 4)</item>
+        <item>6- ## - Não respondeu (-> módulo 4)</item>
+    </array>
+
+    <string name="m3q18">(3.18) O que fizeram para cobrir a falta de dinheiro nos últimos 3 meses?</string>
+    <array name="m3q18">
+        <item> </item>
+        <item>1- Não fazemos economias (-> módulo 4)</item>
+        <item>2- Depositam no banco (-> módulo 4)</item>
+        <item>3- Guardam em casa (-> módulo 4)</item>
+        <item>4- Outro (-> módulo 4)</item>
+        <item>5- ** - Não sabe (-> módulo 4)</item>
+        <item>6- ## - Não respondeu (-> módulo 4)</item>
+    </array>
+
 
 </resources>

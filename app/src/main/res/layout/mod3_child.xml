@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout
-    android:id="@+id/mod2_new_person"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,93 +11,140 @@
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/m2q1"
-        android:textSize="20sp" />
-    <Spinner
-        android:id="@+id/m2q1"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:entries="@array/m2q1"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/m2q2"
-        android:textSize="20sp" />
-    <Spinner
-        android:id="@+id/m2q2"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:entries="@array/m2q2"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/m2q3"
-        android:textSize="20sp" />
-    <Spinner
-        android:id="@+id/m2q3"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:entries="@array/m2q3"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/m2q4"
-        android:textSize="20sp" />
-    <Spinner
-        android:id="@+id/m2q4"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:entries="@array/m2q4"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/m2q5"
-        android:textSize="20sp" />
-    <Spinner
-        android:id="@+id/m2q5"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:entries="@array/m2q5"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/m2q6"
+        android:text="@string/m3q1"
         android:textSize="20sp" />
     <EditText
-        android:id="@+id/m2q6"
+        android:id="@+id/m3q1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:ems="10"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q2"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q3"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q3"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q3"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q4"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q4"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q4"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q5"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q5"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q5"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q6"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q6"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q6"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q7"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q7"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q7"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q8"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/m3q8"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:inputType="numberDecimal"
         android:ems="10"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q9"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/m3q9"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:entries="@array/m3q9"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/m2q7"
+        android:text="@string/m3q10"
         android:textSize="20sp" />
-    <Spinner
-        android:id="@+id/m2q7"
+    <EditText
+        android:id="@+id/m3q10"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:entries="@array/m2q7"/>
-
+        android:inputType="text"
+        android:ems="10"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/m2q8"
+        android:text="@string/m3q11"
         android:textSize="20sp" />
     <Spinner
-        android:id="@+id/m2q8"
+        android:id="@+id/m3q11"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:entries="@array/m2q8"/>
+        android:entries="@array/m3q11"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/m3q12"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/m3q12"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="numberDecimal"
+        android:ems="10"/>
 
     <TextView
         android:layout_height="10dp"

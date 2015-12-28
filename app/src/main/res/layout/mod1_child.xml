@@ -128,9 +128,10 @@
             android:inputType="numberDecimal"
             android:ems="10" />
 
-        <Space
-            android:layout_height="20dp"
-            android:layout_width="match_parent"/>
+        <TextView
+            android:layout_height="10dp"
+            android:layout_width="match_parent"
+            android:background="#000000"/>
 
     </TableLayout>
 

@@ -65,6 +65,10 @@ public class InserirDados extends AppCompatActivity {
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
+        viewPager.setCurrentItem(3);
+        viewPager.setCurrentItem(2);
+        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
@@ -107,6 +111,8 @@ public class InserirDados extends AppCompatActivity {
     private boolean save() {
         if (modulo0.save()) {
             modulo1.save();
+            modulo2.save();
+            modulo3.save();
 
             if (insert_data) MainActivity.data_handler.update(respostas);
             else             MainActivity.data_handler.create(respostas);

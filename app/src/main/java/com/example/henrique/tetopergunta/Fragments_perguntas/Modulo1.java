@@ -19,15 +19,14 @@ import java.util.LinkedList;
 
 public class Modulo1 extends Fragment {
 
-    private View view;
+    public View view;
     private ViewGroup insertPoint;
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_modulo1, container, false);
 
         insertPoint = (ViewGroup) view.findViewById(R.id.mod1_table);
-        InserirDados.modulo2.inflate_insertion_point();
 
         view.findViewById(R.id.mod1_add_person).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,14 +37,16 @@ public class Modulo1 extends Fragment {
             }
         });
 
-        if (InserirDados.insert_data) set_respostas(InserirDados.respostas, inflater, container);
+        set_respostas(InserirDados.respostas, inflater, container);
 
         return view;
     }
 
     public void set_respostas(Respostas respostas, LayoutInflater inflater, ViewGroup container) {
-        ArrayList<RespostasInfo> main_list = respostas.getMainAnswers();
-        ((EditText) view.findViewById(R.id.m1q10)).setText(main_list.get(24).resp);
+        if (InserirDados.insert_data) {
+            ArrayList<RespostasInfo> main_list = respostas.getMainAnswers();
+            ((EditText) view.findViewById(R.id.m1q10)).setText(main_list.get(24).resp);
+        }
 
         LinkedList<ArrayList<RespostasInfo>> mod1_list = respostas.getModAnswers(Respostas.Modulos.MODULO_1);
 
@@ -142,5 +143,29 @@ public class Modulo1 extends Fragment {
                 }
             }
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        save();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        save();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        save();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        save();
     }
 }
