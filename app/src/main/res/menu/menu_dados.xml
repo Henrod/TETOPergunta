@@ -15,4 +15,11 @@
         app:showAsAction="always"
         android:icon="@drawable/savetable"
         />
+
+    <item android:id="@+id/next_module"
+        android:title="Próximo módulo"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/nextmodule"
+        />
 </menu>

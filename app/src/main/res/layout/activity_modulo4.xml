@@ -14,35 +14,22 @@
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Módulo 1"
+            android:text="Módulo 4"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
-        <TextView
-            android:paddingTop="50sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/m1q10"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/m1q10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:ems="10"
-            />
-
         <Button
-            android:id="@+id/mod1_add_person"
+            android:id="@+id/mod4_add_person"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Acrescentar pessoa" />
 
         <TableLayout
-            android:id="@+id/mod1_table"
+            android:id="@+id/mod4_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>
 
     </LinearLayout>
+
 </ScrollView>

@@ -140,7 +140,7 @@ public class DBMS {
     private static final String MOD4_TABLE_NAME = "DADOS_MOD4";
 
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 11;
+    private static final int DB_VERSION = 12;
     private static final String CREATE_MAIN_TABLE = "CREATE TABLE IF NOT EXISTS " + MAIN_TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "
@@ -154,10 +154,7 @@ public class DBMS {
             + M0Q24 +   " TEXT, " + M1Q10 +   " TEXT, "
             + M3Q14 + " TEXT, " + M3Q15 + " TEXT, "
             + M3Q16 +   " TEXT, " + M3Q17 + " TEXT, " + M3Q18 + " TEXT, "
-            + M4Q1 +    " TEXT, " + M4Q2 +  " TEXT, " + M4Q3 +  " TEXT, "
-            + M4Q4 +    " TEXT, " + M4Q5 +  " TEXT, " + M4Q6 +  " TEXT, "
-            + M4Q7 +    " TEXT, " + M4Q8 +  " TEXT, " + M4Q9 +  " TEXT, "
-            + M4Q10 +   " TEXT, " + M5Q1 +  " TEXT, " + M5Q2 +  " TEXT, "
+            + M5Q1 +  " TEXT, " + M5Q2 +  " TEXT, "
             + M5Q3 +    " TEXT, " + M5Q4 +  " TEXT, " + M5Q5 +  " TEXT, "
             + M5Q6 +    " TEXT, " + M5Q7 +  " TEXT, " + M5Q8 +  " TEXT, "
             + M5Q9 +    " TEXT, "
@@ -199,6 +196,15 @@ public class DBMS {
             + M3Q10 +   " TEXT, " + M3Q11 + " TEXT, " + M3Q12 + " TEXT"
             +");";
 
+    private static final String CREATE_TABLE_MOD4 = "CREATE TABLE IF NOT EXISTS "
+            + MOD4_TABLE_NAME + "("
+            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + N_SERIE +  " TEXT, "
+            + M4Q1 +    " TEXT, " + M4Q2 +  " TEXT, " + M4Q3 +  " TEXT, "
+            + M4Q4 +    " TEXT, " + M4Q5 +  " TEXT, " + M4Q6 +  " TEXT, "
+            + M4Q7 +    " TEXT, " + M4Q8 +  " TEXT, " + M4Q9 +  " TEXT, "
+            + M4Q10 +   " TEXT"
+            +");";
+
 
     private static DataBaseHelper dataBaseHelper;
     private static SQLiteDatabase db;
@@ -216,6 +222,7 @@ public class DBMS {
             db.execSQL(CREATE_TABLE_MOD1);
             db.execSQL(CREATE_TABLE_MOD2);
             db.execSQL(CREATE_TABLE_MOD3);
+            db.execSQL(CREATE_TABLE_MOD4);
         }
 
         @Override
@@ -224,6 +231,7 @@ public class DBMS {
             db.execSQL("DROP TABLE IF EXISTS " + MOD1_TABLE_NAME);
             db.execSQL("DROP TABLE IF EXISTS " + MOD2_TABLE_NAME);
             db.execSQL("DROP TABLE IF EXISTS " + MOD3_TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + MOD4_TABLE_NAME);
             onCreate(db);
         }
     }
@@ -238,6 +246,7 @@ public class DBMS {
         ContentValues mod1_values = new ContentValues();
         ContentValues mod2_values = new ContentValues();
         ContentValues mod3_values = new ContentValues();
+        ContentValues mod4_values = new ContentValues();
 
         for (RespostasInfo rInfo : respostas.getMainAnswers()) {
             main_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
@@ -268,6 +277,14 @@ public class DBMS {
             db.insert(MOD3_TABLE_NAME, null, mod3_values);
         }
 
+        for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_4)) {
+            for (RespostasInfo rInfo : list) {
+                mod4_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+            } mod4_values.put(N_SERIE, respostas.getNSerie());
+
+            db.insert(MOD4_TABLE_NAME, null, mod4_values);
+        }
+
         db.close();
     }
 
@@ -285,6 +302,9 @@ public class DBMS {
 
         select = "SELECT * FROM " + MOD3_TABLE_NAME + " WHERE " + N_SERIE + " = ?";
         Cursor cursor_mod3 = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
+
+        select = "SELECT * FROM " + MOD4_TABLE_NAME + " WHERE " + N_SERIE + " = ?";
+        Cursor cursor_mod4 = db.rawQuery(select, new String[]{String.valueOf(n_serie)});
 
         Respostas respostas = new Respostas();
         int modulo, n_ques;
@@ -360,12 +380,30 @@ public class DBMS {
             } while (cursor_mod3.moveToNext());
         }
 
+        n = 0;
+        if(cursor_mod4.moveToFirst()) {
+            do {
+                columns_name = cursor_mod4.getColumnNames();
+
+                for (int i = 2; i < cursor_mod4.getColumnCount(); i++) {
+                    modulo = Integer.valueOf(columns_name[i].substring(1, 2));
+                    n_ques = Integer.valueOf(columns_name[i].substring(3));
+                    resp = cursor_mod4.getString(i);
+
+                    rInfo = new RespostasInfo(modulo, n_ques, resp);
+                    respostas.setAnswers(rInfo, Respostas.Modulos.MODULO_4, n, false);
+                }
+                n++;
+            } while (cursor_mod4.moveToNext());
+        }
+
         db.close();
 
         cursor_main.close();
         cursor_mod1.close();
         cursor_mod2.close();
         cursor_mod3.close();
+        cursor_mod4.close();
 
         return respostas;
     }
@@ -376,6 +414,7 @@ public class DBMS {
         ContentValues mod1_values;
         ContentValues mod2_values;
         ContentValues mod3_values;
+        ContentValues mod4_values;
 
         for (RespostasInfo rInfo : respostas.getMainAnswers()) {
             main_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
@@ -415,6 +454,17 @@ public class DBMS {
             db.insert(MOD3_TABLE_NAME, null, mod3_values);
         }
 
+        db.delete(MOD4_TABLE_NAME, N_SERIE + "= ?", new String[]{respostas.getNSerie()});
+        for (ArrayList<RespostasInfo> list : respostas.getModAnswers(Respostas.Modulos.MODULO_4)) {
+            mod4_values = new ContentValues();
+
+            for (RespostasInfo rInfo : list) {
+                mod4_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
+            } mod4_values.put(N_SERIE, respostas.getNSerie());
+
+            db.insert(MOD3_TABLE_NAME, null, mod4_values);
+        }
+
         db.close();
     }
 
@@ -424,6 +474,7 @@ public class DBMS {
         db.delete(MOD1_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
         db.delete(MOD2_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
         db.delete(MOD3_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
+        db.delete(MOD4_TABLE_NAME, N_SERIE+"= ?", new String[]{n_serie});
         db.close();
     }
 

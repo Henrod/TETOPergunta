@@ -338,5 +338,58 @@
         <item>6- ## - Não respondeu (-> módulo 4)</item>
     </array>
 
+    <string name="m4q1">(4.01) [NOME] frequentou algum centro de saúde nos últimos três meses?</string>
+        <array name="m4q1">
+            <item> </item>
+            <item>1- Sim</item>
+            <item>2- Não (-> 4.05)</item>
+        </array>
+    <string name="m4q2">(4.02) Você diria que o lugar onde [NOME] trabalha está localizado: </string>
+        <array name="m4q2">
+            <item> </item>
+            <item>1- Perto</item>
+            <item>2- Nem perto nem longe</item>
+            <item>3- Longe</item>
+        </array>
+    <string name="m4q3">(4.03) Quanto tempo [NOME] leva para chegar ao local de trabalho? (responder
+        em minutos)</string>
+    <string name="m4q4">(3.09) Qual o principal meio de tranporte [NOME] utiliza para chegar ao
+        local de trabalho?</string>
+        <array name="m4q4">
+            <item> </item>
+            <item>1- A pé/bicicleta (-> 3.01)</item>
+            <item>2- Transporte pbúlico (ônibus, trem, metrô) (-> 3.01)</item>
+            <item>3- Transporte coletivo privato (van, fretado, taxi) (-> 3.01)</item>
+            <item>4- Transporte privado (carro, moto, carona) (-> 3.01)</item>
+        </array>
+    <string name="m4q5">(4.05) Durante os últimos 30 dias, [NOME] teve diarréia?</string>
+        <array name="m4q5">
+            <item> </item>
+            <item>1- Sim</item>
+            <item>2- Não</item>
+        </array>
+    <string name="m4q6">(4.06) Durante os últimos 30 dias, [NOME] teve alguma doencça respiratória,
+    crônica ou não (quais?) (1- Renite alérgica / 2- Asma / 3- Bronquite / 4- Efisema pulmonar
+    / 5- Tuberculose / 6- Outros / 7- Não) </string>
+    <string name="m4q7">(4.07) Durante os últimos 30 dias, [NOME] teve algum outro problema de saúde,
+    doença (crônica ou não) ou acidente?</string>
+        <array name="m4q7">
+            <item> </item>
+            <item>1- Sim</item>
+            <item>2- Não</item>
+        </array>
+    <string name="m4q8">(4.08) [NOME] tem alguma doença crônica, que necessita de tratamento contínuo
+        (quais?) (1- Hipertensão / 2- Diabétes / 3- Câncer / 4- Doenças renais (rins) / 5- Obesidade
+        / 6- Hepatite / 7- Aids / 8- Outros / 9- Não) </string>
+    <string name="m4q9">(4.09) [NOME] tem problema de depência de dependência de álcool ou drogas?
+    </string>
+        <array name="m4q9">
+            <item> </item>
+            <item>1- Sim</item>
+            <item>2- Não</item>
+        </array>
+    <string name="m4q10">(4.10) [NOME] é portador de alguma das seguintes deficiências? (quais?)
+        (1- Não é portador de deficiência / 2- Visual / 3- Motora / 4- Auditiva / 5- Mental ou
+        intelectual / 6- Outros)</string>
 
 </resources>

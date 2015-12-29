@@ -17,6 +17,7 @@ public class Respostas {
     private LinkedList<ArrayList<RespostasInfo>> mod1_answers;
     private LinkedList<ArrayList<RespostasInfo>> mod2_answers;
     private LinkedList<ArrayList<RespostasInfo>> mod3_answers;
+    private LinkedList<ArrayList<RespostasInfo>> mod4_answers;
 
     private String n_serie;
     private long id = 0;
@@ -26,6 +27,7 @@ public class Respostas {
         mod1_answers = new LinkedList<>();
         mod2_answers = new LinkedList<>();
         mod3_answers = new LinkedList<>();
+        mod4_answers = new LinkedList<>();
     }
 
     public void setNSerie(String n_serie) {
@@ -74,6 +76,7 @@ public class Respostas {
                 return mod3_answers;
 
             case MODULO_4:
+                return mod4_answers;
 
             case MODULO_5:
 
