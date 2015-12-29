@@ -100,6 +100,25 @@ public class DBMS {
     private static final String M5Q7 = "m5q7";
     private static final String M5Q8 = "m5q8";
     private static final String M5Q9 = "m5q9";
+    private static final String M5Q10 = "m5q10";
+    private static final String M5Q11 = "m5q11";
+    private static final String M5Q12 = "m5q12";
+    private static final String M5Q13 = "m5q13";
+    private static final String M5Q14 = "m5q14";
+    private static final String M5Q15 = "m5q15";
+    private static final String M5Q16 = "m5q16";
+    private static final String M5Q17 = "m5q17";
+    private static final String M5Q18 = "m5q18";
+    private static final String M5Q19 = "m5q19";
+    private static final String M5Q20 = "m5q20";
+    private static final String M5Q21 = "m5q21";
+    private static final String M5Q22 = "m5q22";
+    private static final String M5Q23 = "m5q23";
+    private static final String M5Q24 = "m5q24";
+    private static final String M5Q25 = "m5q25";
+    private static final String M5Q26 = "m5q26";
+    private static final String M5Q27 = "m5q27";
+
 
     private static final String M6Q1 = "m6q1";
     private static final String M6Q2 = "m6q2";
@@ -140,7 +159,7 @@ public class DBMS {
     private static final String MOD4_TABLE_NAME = "DADOS_MOD4";
 
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 12;
+    private static final int DB_VERSION = 13;
     private static final String CREATE_MAIN_TABLE = "CREATE TABLE IF NOT EXISTS " + MAIN_TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "
@@ -158,6 +177,14 @@ public class DBMS {
             + M5Q3 +    " TEXT, " + M5Q4 +  " TEXT, " + M5Q5 +  " TEXT, "
             + M5Q6 +    " TEXT, " + M5Q7 +  " TEXT, " + M5Q8 +  " TEXT, "
             + M5Q9 +    " TEXT, "
+            + M5Q10 +  " TEXT, " + M5Q11 +  " TEXT, "
+            + M5Q12 +    " TEXT, " + M5Q13 +  " TEXT, " + M5Q14 +  " TEXT, "
+            + M5Q15 +    " TEXT, " + M5Q16 +  " TEXT, " + M5Q17 +  " TEXT, "
+            + M5Q18 +    " TEXT, "
+            + M5Q19 +  " TEXT, " + M5Q20 +  " TEXT, "
+            + M5Q21 +    " TEXT, " + M5Q22 +  " TEXT, " + M5Q23 +  " TEXT, "
+            + M5Q24 +    " TEXT, " + M5Q25 +  " TEXT, " + M5Q26 +  " TEXT, "
+            + M5Q27 +    " TEXT, "
             + M6Q1 +    " TEXT, " + M6Q2 +  " TEXT, " + M6Q3 +  " TEXT, "
             + M6Q4 +    " TEXT, " + M6Q5 +  " TEXT, " + M6Q6 +  " TEXT, "
             + M6Q7 +    " TEXT, " + M6Q8 +  " TEXT, " + M6Q9 +  " TEXT, "
@@ -462,7 +489,7 @@ public class DBMS {
                 mod4_values.put("m" + rInfo.modulo + "q" + rInfo.n_questao, rInfo.resp);
             } mod4_values.put(N_SERIE, respostas.getNSerie());
 
-            db.insert(MOD3_TABLE_NAME, null, mod4_values);
+            db.insert(MOD4_TABLE_NAME, null, mod4_values);
         }
 
         db.close();

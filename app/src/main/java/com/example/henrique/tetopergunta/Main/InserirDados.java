@@ -20,6 +20,7 @@ import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo1;
 import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo2;
 import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo3;
 import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo4;
+import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo5;
 import com.example.henrique.tetopergunta.R;
 
 /**
@@ -40,6 +41,7 @@ public class InserirDados extends AppCompatActivity {
     public static Modulo2 modulo2;
     public static Modulo3 modulo3;
     public static Modulo4 modulo4;
+    public static Modulo5 modulo5;
 
     public static boolean insert_data = false;
     public static boolean not_a_new_person;
@@ -61,6 +63,7 @@ public class InserirDados extends AppCompatActivity {
         modulo2 = new Modulo2();
         modulo3 = new Modulo3();
         modulo4 = new Modulo4();
+        modulo5 = new Modulo5();
 
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações da enquete");
@@ -68,6 +71,7 @@ public class InserirDados extends AppCompatActivity {
         tabsAdapter.addFragment(modulo2, "Módulo 2");
         tabsAdapter.addFragment(modulo3, "Módulo 3");
         tabsAdapter.addFragment(modulo4, "Módulo 4");
+        tabsAdapter.addFragment(modulo5, "Módulo 5");
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
@@ -135,6 +139,7 @@ public class InserirDados extends AppCompatActivity {
             modulo2.save();
             modulo3.save();
             modulo4.save();
+            modulo5.save();
 
             if (insert_data) MainActivity.data_handler.update(respostas);
             else MainActivity.data_handler.create(respostas);

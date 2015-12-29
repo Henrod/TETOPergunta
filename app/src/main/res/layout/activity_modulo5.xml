@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Módulo 5"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q1" />
+        <Spinner
+            android:id="@+id/m5q1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                android:entries="@array/m5q1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q2" />
+        <Spinner
+            android:id="@+id/m5q2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/m5q2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q3" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q3"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q4" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q4"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q5" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q5"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q6" />
+        <Spinner
+            android:id="@+id/m5q6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/m5q6"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q7" />
+        <Spinner
+            android:id="@+id/m5q7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/m5q7"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q8" />
+        <Spinner
+            android:id="@+id/m5q8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/m5q8"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q9" />
+        <Spinner
+            android:id="@+id/m5q9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/m5q9"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q10" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q10"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q11" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q11"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q12" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q12"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q13" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q13"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q14" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q14"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q15" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q15"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q16" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q16"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q17" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q17"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q18" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q18"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q19" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q19"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q20" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q20"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q21" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q21"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q22" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q22"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q23" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q23"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q24" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q24"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q25" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q25"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q26" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q26"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text="@string/m5q27" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/m5q27"
+            android:inputType="text"/>
+
+
+    </TableLayout>
+
+</ScrollView>

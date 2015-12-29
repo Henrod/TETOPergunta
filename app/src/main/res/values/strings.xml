@@ -353,7 +353,7 @@
         </array>
     <string name="m4q3">(4.03) Quanto tempo [NOME] leva para chegar ao local de trabalho? (responder
         em minutos)</string>
-    <string name="m4q4">(3.09) Qual o principal meio de tranporte [NOME] utiliza para chegar ao
+    <string name="m4q4">(4.04) Qual o principal meio de tranporte [NOME] utiliza para chegar ao
         local de trabalho?</string>
         <array name="m4q4">
             <item> </item>
@@ -391,5 +391,438 @@
     <string name="m4q10">(4.10) [NOME] é portador de alguma das seguintes deficiências? (quais?)
         (1- Não é portador de deficiência / 2- Visual / 3- Motora / 4- Auditiva / 5- Mental ou
         intelectual / 6- Outros)</string>
+
+    <string name="m5q1">(5.01) De que tipo é a moradia que habita?</string>
+        <array name="m5q1">
+            <item> </item>
+            <item>1- Casa de alvenaria/bloco</item>
+            <item>2- Apartamento</item>
+            <item>3- Cômodo em casa de alvenaria</item>
+            <item>4- Casa de pau-à-pique</item>
+            <item>5- Barraco de madeira/lona/pano/papelão/metal</item>
+            <item>6- Outro</item>
+        </array>
+
+    <string name="m5q2">(5.02) Qual a situação do terreno que habita?</string>
+        <array name="m5q2">
+            <item> </item>
+            <item>1- Terreno próprio regular</item>
+            <item>2- Terreno próprio irregular</item>
+            <item>3- Terreno alugado</item>
+            <item>4- Terreno emprestado</item>
+            <item>5- Outro</item>
+        </array>
+
+    <string name="m5q3">(5.03) Quantos cômodos há em casa? (banheiro e cozinha não são cômodos)</string>
+    <string name="m5q4">(5.04) Do total de cômodos, quantos são dormintórios?</string>
+    <string name="m5q5">(5.05) Quantas camas  lugares de dormir vocês usam na casa? (cama de
+    solteiro = 1 lugar, sofá,etc = 1 lugar, cama de casal = 2 lugares)</string>
+    <string name="m5q6">(5.06) De onde obtém a água que usam na sua casa?</string>
+        <array name="m5q6">
+            <item> </item>
+            <item>1- Encanada regular em casa (relógio dágua)</item>
+            <item>2- Encanada irregular em casa</item>
+            <item>3- Poço/cisterna no terreno</item>
+            <item>4- Ponto de água fora de casa / do terreno (torneira coletiva, caminhão pipa, poço
+                coletivo)</item>
+            <item>5- Outro</item>
+        </array>
+
+    <string name="m5q7">(5.07) Possui energia elétrica na sua casa?</string>
+        <array name="m5q7">
+            <item> </item>
+            <item>1- Sim, regular</item>
+            <item>2- Sim, irregular (gato)</item>
+            <item>3- Não possui</item>
+        </array>
+
+    <string name="m5q8">(5.08) Qual o tipo de banheiro que usam em sua casa?</string>
+    <array name="m5q8">
+        <item> </item>
+        <item>1- Rede de esgoto</item>
+        <item>2- Fossa</item>
+        <item>3- A céu aberto</item>
+        <item>4- Não possui banheiro próprio</item>
+        <item>5- Outro</item>
+    </array>
+
+    <string name="m5q9">(5.09) Como é descartado o lixo produzido na sua casa?</string>
+    <array name="m5q9">
+        <item> </item>
+        <item>1- É coletado em frente de casa</item>
+        <item>2- Leva para um ponto de coleta da comunidade</item>
+        <item>3- Joga no rio/terreno baldio</item>
+        <item>4- Joga no rio/córrego</item>
+        <item>5- Enterra</item>
+        <item>6- Queima</item>
+        <item>7- Recicla</item>
+        <item>8- Fora da comunidade</item>
+        <item>9- Outro</item>
+    </array>
+
+    <string name="m5q10">(5.10) Há quanto tempo a família vive na casa?</string>
+    <string name="m5q11">(5.11) Qual o uso seria dado para a casa do TETO?</string>
+    <string name="m5q12">(5.12) Material do telhado</string>
+    <string name="m5q13">(5.13) Estado do telhado</string>
+    <string name="m5q14">(5.14) Entra água pelo telhado?</string>
+    <string name="m5q15">(5.15) Material predominante da parede</string>
+    <string name="m5q16">(5.16) Estado das paredes</string>
+    <string name="m5q17">(5.17) Estabilidade da parede</string>
+    <string name="m5q18">(5.18) Material predominante do piso</string>
+    <string name="m5q19">(5.19) Estado do piso</string>
+    <string name="m5q20">(5.20) Umidade</string>
+    <string name="m5q21">(5.21) Ventilação</string>
+    <string name="m5q22">(5.22) Há presença de animais nocivos? (ratos, baratas, cobras, etc.)</string>
+    <string name="m5q23">(5.23) Entra água pelo piso?</string>
+    <string name="m5q24">(5.24) Entra esgoto regularmente na casa quando chove?</string>
+    <string name="m5q25">(5.25) Qual a área da casa construída? (em metros x metros)</string>
+    <string name="m5q26">(5.26) Tem perspectiva de construir casa de bloco em até seis meses?</string>
+    <string name="m5q27">(5.27) Tem perspectiva de sair da comunidade em até um ano?</string>
+
+    <string name="m6q1">(6.01) Você ou alguém da sua família enfrentam ou enfrentaram algum
+    dos seguintes problemas na justiça?
+        (1- Problemas legais com terreno (despejo) /
+        2-Divórcio litigioso /
+        3- Processos trabalhistas /
+        4- Nome sujo na praça /
+        5- Conselho tutelar /
+        6- Histórico penal /
+        7- Processos no JEC (Juizado Especial Civil) /
+        8- Não tem problemas na justiça /
+        9- Outros (especifique))
+    </string>
+
+    <string name="m6q2">(6.02) A família já sofreu algum processo e remoção de alguma comunidade?
+    (qualquer comunidade)</string>
+        <array name="m6q2">
+            <item> </item>
+            <item>Sim</item>
+            <item>Não (-> 6.05)</item>
+        </array>
+    <string name="m6q3">(6.03) Porque a família foi removida?</string>
+        <array name="m6q3">
+            <item> </item>
+            <item>1- Notificação da Defesa Civil</item>
+            <item>2- Reintegração de posse</item>
+            <item>3- Obra da prefeitura/Plano de Urbanização</item>
+            <item>4- Expulsoã ou remoção sem justificativa</item>
+            <item>5- Outro motivo</item>
+        </array>
+    <string name="m6q4">(6.04) Como foi feita a remoção da comunidade anterior?
+            (1- Auxílio aluguel /
+            2- Cheque despejo /
+            3- Programa habitacional /
+            4- Outro motivo)
+    </string>
+
+    <string name="m6q5">(6.05) Em qual ano sua família se mudou para esta comunidade?</string>
+
+    <string name="m6q6">(6.06) Qual é o principal motivo pelo qual a família veio morar nesta
+        comunidade?</string>
+    <array name="m6q6">
+        <item> </item>
+        <item>1- Fim do aluguel-social/benefício</item>
+        <item>2- Falta de dinherio para se maner em ouro lugar</item>
+        <item>3- Foi removido da outra comunidade mas não se adaptou à vida em outro lugar</item>
+        <item>4- Família e /ou amigos na comunidade</item>
+        <item>5- Morava em conjunto habitacional mas vendeu a unidade que recebeu</item>
+        <item>6- Morava em conjunto habitacional mas resolveu sair</item>
+        <item>7- Separação do companheiro</item>
+        <item>8- Casamento</item>
+        <item>9- Outro motivo</item>
+    </array>
+
+    <string name="m6q7">(6.07) A família é beneficiada por algum programa  de assistência social
+    do governo ou município?
+            (1- Sim, carteira do idoso /
+            2- Sim, Projovem /
+            3- Sim, Tarifa Social (energia) /
+            4- Sim, Passe livre (transporte) /
+            5- Nenhum) </string>
+
+
+    <string name="m6q8">(6.08) Você sofre frequentemente algum tipo de discriminaçoã ou preconceito?
+        (1- Sim, carteira do idoso /
+        2- Sim, Projovem /
+        3- Sim, Tarifa Social (energia) /
+        4- Sim, Passe livre (transporte) /
+        5- Nenhum)
+    </string>
+
+    <string name="m6q9">(6.09) Você ou alguém da sua família enfrentam ou enfrentaram algum
+    dos seguintes problemas na justiça?
+        (1- Problemas legais com terreno (despejo) /
+        2-Divórcio litigioso /
+        3- Processos trabalhistas /
+        4- Nome sujo na praça /
+        5- Conselho tutelar /
+        6- Histórico penal /
+        7- Processos no JEC (Juizado Especial Civil) /
+        8- Não tem problemas na justiça /
+        9- Outros (especifique))
+    </string>
+
+    <string name="m6q10">(6.10) Você confia nas seguintes pessoas ou instituições?</string>
+    <string name="m6q101">(6.10.1) Família</string>
+    <array name="m6q101">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q102">(6.10.2) Amigos</string>
+    <array name="m6q102">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q103">(6.10.3) Vizinhos</string>
+    <array name="m6q103">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q104">(6.10.4) Ldeíres comunitários</string>
+    <array name="m6q104">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q105">(6.10.5) Polícia</string>
+    <array name="m6q105">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q106">(6.10.6) Prefeitura</string>
+    <array name="m6q106">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q107">(6.10.7) Órgãos públicos</string>
+    <array name="m6q107">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q108">(6.10.8) Politicos</string>
+    <array name="m6q108">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q109">(6.10.9) ONGs</string>
+    <array name="m6q109">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+    <string name="m6q1010">(6.10.10) Mída (tv, jornal, etc.)</string>
+    <array name="m6q1010">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
+
+    <string name="m6q11">(6.11) Como você diria que seus vizinhos ajudam sua família?
+        (1- Apoio moral (escutam meus problemas) /
+        2- Tarefas de casa, compras, trmiâtes/
+        3- Financeiramente /
+        4- Coisas que necessito (comida, roupa) /
+        5- Não me ajudam /
+        6- De outras formas (especifique))
+    </string>
+
+    <string name="m6q12">(6.12) Como você diria que seus fampilia ajuda seus vizinhos?
+        (1- Apoio moral (escutam meus problemas) /
+        2- Tarefas de casa, compras, trâmites/
+        3- Financeiramente /
+        4- Coisas que necessito (comida, roupa) /
+        5- Não me ajudam /
+        6- De outras formas (especifique))
+    </string>
+
+    <string name="m6q13">(6.13) Qual das opções descreve melhor ua relação com os outros moradores
+        da comunidade?</string>
+    <array name="m6q13">
+        <item> </item>
+        <item>1- Não conheço ou não me relaciono com ninguém</item>
+        <item>2- Conheço algumas pessoas mas nos relacionamos pouco</item>
+        <item>3- Gosto de me encontrar e conversar com outros moradores</item>
+        <item>4- Tenho ótimos amigos na comunidade</item>
+        <item>5- Nenhuma das anteriores</item>
+    </array>
+
+    <string name="m6q14">(6.14) Da seguinte lista, quais são os problemas que existem na sua
+        comunidade? (no máximo 4)
+            (1- Os serviços públicos ficam muito longe /
+            2- Regularização fundiária/dos terrenos dos moradores /
+            3- Falta de infraestrutura (ruas, água, luz)/
+            4- Poluição, sujeira, lixo /
+            5- Educação de baixa qualidade /
+            6- Problemas de saúde/fila de espera do posto /
+            7- Gravidez não desejada /
+            8- Falta de lazer /
+            9- Violência, falta de segurança, criminalidade /
+            10- Violência doméstica /
+            11-Vícios (álcool, drogas) /
+            12- Tráfico de drogas /
+            13- Trabalho infantil /
+            14- Desemprego /
+            15- Trabalho precário /
+            16- Os vizinhos não se dão bem /
+            17- Alagametno, inundação, enchente /
+            18- Outros problemas (especifique))
+        </string>
+
+    <string name="m6q15">(6.15) Quais são os dois grupos que vocẽ considera as mais afetadas pelos
+        problemas da comunidade?
+        (1- Crianças /
+        2- Jovens/
+        3- Mulheres /
+        4- Terceira idade, idosos /
+        5- Deficientes físicos /
+        6- Minorias étinicas /
+        7- Não existem pessoas mais afetadas do que outras pelos problemas da comunidade /
+        8- Outro (especifique))
+    </string>
+
+    <string name="m6q16">(6.16) Como as pessoas ficam sabendo dos eventos que acontecem na comunidade?
+        (1- Reuniões, Assembléias /
+        2- Representantes comunitários /
+        3- Informes, jornal do bairro /
+        4- Igreja /
+        5- Vizinhos /
+        6- Cartazes /
+        7- Outro (especifique))
+    </string>
+
+    <string name="m6q17">(6.17) Existe uma pessoa que representa os moradores da comunidade?
+        (1- Sim (Quem?) /
+        2- Não )
+    </string>
+
+    <string name="m6q18">(6.18) No último ano, vocẽ ou algum membro do seu lar participou de algum
+         grupo ou ssociação na comunidade?</string>
+    <array name="m6q18">
+        <item> </item>
+        <item>1- Sim (-> 6.20)</item>
+        <item>2- Não</item>
+    </array>
+
+    <string name="m6q19">(6.19) Porque você não participa de algum grupo ou ssociação na
+        comunidade?</string>
+    <array name="m6q19">
+        <item> </item>
+        <item>1- Não tem interesse</item>
+        <item>2- Tem interesse mas não sabe como</item>
+        <item>3- Falta tempo</item>
+        <item>4- Outro</item>
+        <item>**- Não sabe</item>
+        <item>##- Não respondeu</item>
+    </array>
+
+    <string name="m6q20">(6.20) De quais tipos de grupos ou associações comunitárias participa?
+        (1- Grupo político /
+        2- Time ou associação esportiva/
+        3- Igreja ou grupos reigiosos/
+        4- Grupo de jovens /
+        5- Grupo de mulheres /
+        6- Associação de moradores /
+        7- Outro (especifique))
+    </string>
+
+    <string name="m6q21">(6.21) Existe na sua comunidade uma assoiação de moradores?</string>
+    <array name="m6q21">
+        <item> </item>
+        <item>1- Sim</item>
+        <item>2- Não</item>
+        <item>3- ** - Não sabe</item>
+        <item>4- ## - Não respondeu</item>
+    </array>
+
+    <string name="m6q22">(6.22) Conhece algum projeto que tenha sido realizado ela associaçoã de
+        moradores?
+        (1- Projeto de infraestrutura /
+        2- Projetos culturais /
+        3- Projetos de educação /
+        4- Projetos de lazer /
+        5- Projetos de capacitação profissional /
+        6- Associação de empreendedorismo /
+        7- Projetos de saúde /
+        8- Nenhum /
+        9- Outro (Especifique) /
+        **- Não sabe /
+        ##- Não qus responder
+        )
+    </string>
+
+    <string name="m6q23">(6.23) Como voc êavalia os projetos realizados pela associação demoradores?</string>
+    <array name="m6q23">
+        <item> </item>
+        <item>1- Bem saisfeito/bem executados</item>
+        <item>2- Executados de forma regular/mais ou menos</item>
+        <item>3- Mal feitos/mal executados</item>
+    </array>
+
+    <string name="m6q24">(6.24) Como você acha que está a stuação da sua comunidade em comparação a
+        dois anos atrás?</string>
+    <array name="m6q24">
+        <item> </item>
+        <item>1- Melhor</item>
+        <item>2- Igual</item>
+        <item>3- Pior</item>
+    </array>
+
+    <string name="m6q25">(6.25) Como você acha que estará a stuação da sua comunidade daqui a
+        dois anos?</string>
+    <array name="m6q25">
+        <item> </item>
+        <item>1- Melhor</item>
+        <item>2- Igual</item>
+        <item>3- Pior</item>
+    </array>
+
+    <string name="m6q26">(6.26) Quais você considera as 3 principais preocupações da sua famlíia
+        em grau de importância (do mais importante para o menos importante)?</string>
+
+    <string name="m6q27">(6.271) A família tem interessse no projeto das casas de emergência do TETO?</string>
+    <array name="m6q27">
+        <item> </item>
+        <item>1- Sim</item>
+        <item>2- Não</item>
+    </array>
+
+    <string name="m6q28">(6.28) Comentários dos entrevistadores?</string>
+
+    <string name="m7q1">(7.1) Como você acha que a casa impactaria esta família?</string>
+    <string name="m8q1">(8.1) Você acha que a família falou a verdade nas respostas?</string>
+    <string name="m9q1">(9.1) A família demonstrou interesse pelo projeto? Você acha que haveria
+    comprometimetno caso trabalhássemos juntos</string>
+    <string name="m10q1">(10.1) Aspectos que podem se de interesse: características familiares, limpeza
+         e organização, violência familiar, se tem perspectiva de sair da comunidade, etc.</string>
+
+
+
 
 </resources>

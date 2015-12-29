@@ -17,6 +17,7 @@ import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modul
 import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo2;
 import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo3;
 import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo4;
+import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo5;
 import com.example.henrique.tetopergunta.Fragments_adapter.SimpleTabsAdapter;
 import com.example.henrique.tetopergunta.R;
 
@@ -33,6 +34,7 @@ public class VerDados extends AppCompatActivity {
     private static Respostas_modulo2 modulo2;
     private static Respostas_modulo3 modulo3;
     private static Respostas_modulo4 modulo4;
+    private static Respostas_modulo5 modulo5;
 
     private String id;
 
@@ -54,6 +56,7 @@ public class VerDados extends AppCompatActivity {
         modulo2 = new Respostas_modulo2();
         modulo3 = new Respostas_modulo3();
         modulo4 = new Respostas_modulo4();
+        modulo5 = new Respostas_modulo5();
 
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações da enquete");
@@ -61,6 +64,7 @@ public class VerDados extends AppCompatActivity {
         tabsAdapter.addFragment(modulo2, "Módulo 2");
         tabsAdapter.addFragment(modulo3, "Módulo 3");
         tabsAdapter.addFragment(modulo4, "Módulo 4");
+        tabsAdapter.addFragment(modulo5, "Módulo 5");
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
