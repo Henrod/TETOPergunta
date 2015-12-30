@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Main;
+package com.example.henrique.tetopergunta.main;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,16 +12,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
-import com.example.henrique.tetopergunta.Fragments_adapter.CustomViewPager;
-import com.example.henrique.tetopergunta.Fragments_adapter.SimpleTabsAdapter;
-import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo0;
-import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo1;
-import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo2;
-import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo3;
-import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo4;
-import com.example.henrique.tetopergunta.Fragments_perguntas.Modulo5;
 import com.example.henrique.tetopergunta.R;
+import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.fragments_adapter.CustomViewPager;
+import com.example.henrique.tetopergunta.fragments_adapter.SimpleTabsAdapter;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo0;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo1;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo2;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo3;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo4;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo5;
+import com.example.henrique.tetopergunta.fragments_perguntas.Modulo6;
+import com.example.henrique.tetopergunta.fragments_perguntas.ModuloExtra;
 
 /**
  * Created by henrique on 09/10/15.
@@ -42,6 +44,8 @@ public class InserirDados extends AppCompatActivity {
     public static Modulo3 modulo3;
     public static Modulo4 modulo4;
     public static Modulo5 modulo5;
+    public static Modulo6 modulo6;
+    public static ModuloExtra moduloExtra;
 
     public static boolean insert_data = false;
     public static boolean not_a_new_person;
@@ -64,6 +68,9 @@ public class InserirDados extends AppCompatActivity {
         modulo3 = new Modulo3();
         modulo4 = new Modulo4();
         modulo5 = new Modulo5();
+        modulo6 = new Modulo6();
+        moduloExtra = new ModuloExtra();
+
 
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações da enquete");
@@ -72,6 +79,8 @@ public class InserirDados extends AppCompatActivity {
         tabsAdapter.addFragment(modulo3, "Módulo 3");
         tabsAdapter.addFragment(modulo4, "Módulo 4");
         tabsAdapter.addFragment(modulo5, "Módulo 5");
+        tabsAdapter.addFragment(modulo6, "Módulo 6");
+        tabsAdapter.addFragment(moduloExtra, "Módulo Extra");
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
@@ -88,6 +97,7 @@ public class InserirDados extends AppCompatActivity {
 
         String id = getIntent().getStringExtra("id");
         respostas = id == null ? new Respostas() : set_respostas(id);
+        findViewById(R.id.excel_button).setVisibility(View.GONE);
     }
 
     @Override
@@ -105,9 +115,11 @@ public class InserirDados extends AppCompatActivity {
         switch(item.getItemId()) {
             case R.id.save_table:
                 try {
-                    if (save())
-                        startActivity(new Intent(InserirDados.this, MainActivity.class));
-                    else
+                    if (save()) {
+                        Intent ver_dados = new Intent(InserirDados.this, VerDados.class);
+                        ver_dados.putExtra("id", respostas.getNSerie());
+                        startActivity(ver_dados);
+                    } else
                         Toast.makeText(InserirDados.this,
                                 "Nº série já existente ou não preenchido",
                                 Toast.LENGTH_LONG).show();
@@ -140,6 +152,8 @@ public class InserirDados extends AppCompatActivity {
             modulo3.save();
             modulo4.save();
             modulo5.save();
+            modulo6.save();
+            moduloExtra.save();
 
             if (insert_data) MainActivity.data_handler.update(respostas);
             else MainActivity.data_handler.create(respostas);

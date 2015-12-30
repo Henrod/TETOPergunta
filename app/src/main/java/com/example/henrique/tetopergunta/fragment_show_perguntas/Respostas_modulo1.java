@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Fragment_show_perguntas;
+package com.example.henrique.tetopergunta.fragment_show_perguntas;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
-import com.example.henrique.tetopergunta.Banco_de_dados.RespostasInfo;
-import com.example.henrique.tetopergunta.Main.VerDados;
+import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
+import com.example.henrique.tetopergunta.main.VerDados;
 import com.example.henrique.tetopergunta.R;
 
 import java.util.ArrayList;

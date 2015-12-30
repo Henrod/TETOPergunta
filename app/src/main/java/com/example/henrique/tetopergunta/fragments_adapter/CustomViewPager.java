@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Fragments_adapter;
+package com.example.henrique.tetopergunta.fragments_adapter;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

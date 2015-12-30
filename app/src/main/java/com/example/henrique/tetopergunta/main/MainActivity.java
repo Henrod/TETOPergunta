@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Main;
+package com.example.henrique.tetopergunta.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.henrique.tetopergunta.Banco_de_dados.DBMS;
-import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.banco_de_dados.DBMS;
+import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
 import com.example.henrique.tetopergunta.R;
 
 import java.util.List;

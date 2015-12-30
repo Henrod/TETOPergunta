@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Banco_de_dados;
+package com.example.henrique.tetopergunta.banco_de_dados;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -73,7 +73,6 @@ public class DBMS {
     private static final String M3Q10 = "m3q10";
     private static final String M3Q11 = "m3q11";
     private static final String M3Q12 = "m3q12";
-    private static final String M3Q13 = "m3q13";
     private static final String M3Q14 = "m3q14";
     private static final String M3Q15 = "m3q15";
     private static final String M3Q16 = "m3q16";
@@ -129,7 +128,16 @@ public class DBMS {
     private static final String M6Q7 = "m6q7";
     private static final String M6Q8 = "m6q8";
     private static final String M6Q9 = "m6q9";
-    private static final String M6Q10 = "m6q10";
+    private static final String M6Q101 = "m6q101";
+    private static final String M6Q102 = "m6q102";
+    private static final String M6Q103 = "m6q103";
+    private static final String M6Q104 = "m6q104";
+    private static final String M6Q105 = "m6q105";
+    private static final String M6Q106 = "m6q106";
+    private static final String M6Q107 = "m6q107";
+    private static final String M6Q108 = "m6q108";
+    private static final String M6Q109 = "m6q109";
+    private static final String M6Q1010 = "m6q110";
     private static final String M6Q11 = "m6q11";
     private static final String M6Q12 = "m6q12";
     private static final String M6Q13 = "m6q13";
@@ -149,6 +157,12 @@ public class DBMS {
     private static final String M6Q27 = "m6q27";
     private static final String M6Q28 = "m6q28";
 
+    private static final String M7Q1 = "m7q1";
+    private static final String M8Q1 = "m8q1";
+    private static final String M9Q1 = "m9q1";
+    private static final String M10Q1 = "m10q1";
+    private static final String M11Q1 = "m11q1";
+
     private static final String ID = "id";
     private static final String N_SERIE = "n_serie";
 
@@ -159,7 +173,7 @@ public class DBMS {
     private static final String MOD4_TABLE_NAME = "DADOS_MOD4";
 
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 13;
+    private static final int DB_VERSION = 16;
     private static final String CREATE_MAIN_TABLE = "CREATE TABLE IF NOT EXISTS " + MAIN_TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "
@@ -188,13 +202,18 @@ public class DBMS {
             + M6Q1 +    " TEXT, " + M6Q2 +  " TEXT, " + M6Q3 +  " TEXT, "
             + M6Q4 +    " TEXT, " + M6Q5 +  " TEXT, " + M6Q6 +  " TEXT, "
             + M6Q7 +    " TEXT, " + M6Q8 +  " TEXT, " + M6Q9 +  " TEXT, "
-            + M6Q10 +   " TEXT, " + M6Q11 + " TEXT, " + M6Q12 + " TEXT, "
+            + M6Q101 +   " TEXT, " + M6Q102 +   " TEXT, " + M6Q103 +   " TEXT, "
+            + M6Q104 +   " TEXT, " + M6Q105 +   " TEXT, " + M6Q106 +   " TEXT, "
+            + M6Q107 +   " TEXT, " + M6Q108 +   " TEXT, " + M6Q109 +   " TEXT, "
+            + M6Q1010 +   " TEXT, "
+            + M6Q11 + " TEXT, " + M6Q12 + " TEXT, "
             + M6Q13 +   " TEXT, " + M6Q14 + " TEXT, " + M6Q15 + " TEXT, "
             + M6Q16 +   " TEXT, " + M6Q17 + " TEXT, " + M6Q18 + " TEXT, "
             + M6Q19 +   " TEXT, " + M6Q20 + " TEXT, " + M6Q21 + " TEXT, "
             + M6Q22 +   " TEXT, " + M6Q23 + " TEXT, " + M6Q24 + " TEXT, "
             + M6Q25 +   " TEXT, " + M6Q26 + " TEXT, " + M6Q27 + " TEXT, "
-            + M6Q28 +   " TEXT"
+            + M6Q28 +   " TEXT, " + M7Q1 + " TEXT, " + M8Q1 + " TEXT, "
+            + M9Q1 +   " TEXT, " + M10Q1 + " TEXT, " + M11Q1 + " TEXT"
             + ");";
 
     private static final String CREATE_TABLE_MOD1 = "CREATE TABLE IF NOT EXISTS "
@@ -346,8 +365,13 @@ public class DBMS {
                 columns_name = cursor_main.getColumnNames();
 
                 for (int i = 1; i < cursor_main.getColumnCount(); i++) {
-                    modulo = Integer.valueOf(columns_name[i].substring(1, 2));
-                    n_ques = Integer.valueOf(columns_name[i].substring(3));
+                    try {
+                        modulo = Integer.valueOf(columns_name[i].substring(1, 2));
+                        n_ques = Integer.valueOf(columns_name[i].substring(3));
+                    } catch (NumberFormatException e) {
+                        modulo = Integer.valueOf(columns_name[i].substring(1, 3));
+                        n_ques = Integer.valueOf(columns_name[i].substring(4));
+                    }
                     resp = cursor_main.getString(i);
 
                     rInfo = new RespostasInfo(modulo, n_ques, resp);

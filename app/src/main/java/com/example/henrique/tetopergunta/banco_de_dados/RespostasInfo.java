@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Banco_de_dados;
+package com.example.henrique.tetopergunta.banco_de_dados;
 
 /**
  * Created by henrique on 26/12/15.

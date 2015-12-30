@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,11 +28,21 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <com.example.henrique.tetopergunta.Fragments_adapter.CustomViewPager
+        <com.example.henrique.tetopergunta.fragments_adapter.CustomViewPager
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tabs_pager"
             android:paddingTop="100dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/excel_button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/excel_button"
+            app:layout_anchor="@+id/tabs_pager"
+            app:layout_anchorGravity="bottom|right|end"
+            android:onClick="generate_excel"
+            />
 
     </android.support.design.widget.CoordinatorLayout>
 

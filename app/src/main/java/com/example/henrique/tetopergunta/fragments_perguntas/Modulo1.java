@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Fragments_perguntas;
+package com.example.henrique.tetopergunta.fragments_perguntas;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
-import com.example.henrique.tetopergunta.Banco_de_dados.RespostasInfo;
-import com.example.henrique.tetopergunta.Main.InserirDados;
-import com.example.henrique.tetopergunta.Main.MainActivity;
+import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
+import com.example.henrique.tetopergunta.main.InserirDados;
+import com.example.henrique.tetopergunta.main.MainActivity;
 import com.example.henrique.tetopergunta.R;
 
 import java.util.ArrayList;

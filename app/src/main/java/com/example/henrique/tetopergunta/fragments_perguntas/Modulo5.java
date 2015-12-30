@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Fragments_perguntas;
+package com.example.henrique.tetopergunta.fragments_perguntas;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
-import com.example.henrique.tetopergunta.Banco_de_dados.RespostasInfo;
-import com.example.henrique.tetopergunta.Main.InserirDados;
-import com.example.henrique.tetopergunta.Main.MainActivity;
+import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
+import com.example.henrique.tetopergunta.main.InserirDados;
+import com.example.henrique.tetopergunta.main.MainActivity;
 import com.example.henrique.tetopergunta.R;
 
 import java.util.ArrayList;
@@ -87,7 +87,7 @@ public class Modulo5 extends Fragment {
         ArrayList<RespostasInfo> resps = respostas.getMainAnswers();
 
         for (RespostasInfo rInfo : resps) {
-            if (rInfo.modulo == 0)
+            if (rInfo.modulo == 5)
                 switch (rInfo.n_questao) {
                     case 1:
                         ((Spinner) view.findViewById(R.id.m5q1)).setSelection(MainActivity.get_position_from_array(

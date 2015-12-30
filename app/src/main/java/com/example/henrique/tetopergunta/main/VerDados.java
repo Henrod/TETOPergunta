@@ -1,4 +1,4 @@
-package com.example.henrique.tetopergunta.Main;
+package com.example.henrique.tetopergunta.main;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,16 +10,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.example.henrique.tetopergunta.Banco_de_dados.Respostas;
-import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo0;
-import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo1;
-import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo2;
-import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo3;
-import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo4;
-import com.example.henrique.tetopergunta.Fragment_show_perguntas.Respostas_modulo5;
-import com.example.henrique.tetopergunta.Fragments_adapter.SimpleTabsAdapter;
 import com.example.henrique.tetopergunta.R;
+import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo0;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo1;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo2;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo3;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo4;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo5;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_modulo6;
+import com.example.henrique.tetopergunta.fragment_show_perguntas.Respostas_moduloExtra;
+import com.example.henrique.tetopergunta.fragments_adapter.SimpleTabsAdapter;
 
 public class VerDados extends AppCompatActivity {
 
@@ -35,6 +38,8 @@ public class VerDados extends AppCompatActivity {
     private static Respostas_modulo3 modulo3;
     private static Respostas_modulo4 modulo4;
     private static Respostas_modulo5 modulo5;
+    private static Respostas_modulo6 modulo6;
+    private static Respostas_moduloExtra moduloExtra;
 
     private String id;
 
@@ -57,6 +62,8 @@ public class VerDados extends AppCompatActivity {
         modulo3 = new Respostas_modulo3();
         modulo4 = new Respostas_modulo4();
         modulo5 = new Respostas_modulo5();
+        modulo6 = new Respostas_modulo6();
+        moduloExtra = new Respostas_moduloExtra();
 
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações da enquete");
@@ -65,6 +72,8 @@ public class VerDados extends AppCompatActivity {
         tabsAdapter.addFragment(modulo3, "Módulo 3");
         tabsAdapter.addFragment(modulo4, "Módulo 4");
         tabsAdapter.addFragment(modulo5, "Módulo 5");
+        tabsAdapter.addFragment(modulo6, "Módulo 6");
+        tabsAdapter.addFragment(moduloExtra, "Módulo Extra");
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
@@ -113,6 +122,10 @@ public class VerDados extends AppCompatActivity {
 
         delete_message.setCancelable(true);
         delete_message.create().show();
+    }
+
+    public void generate_excel(View view) {
+        respostas.export_to_excel(VerDados.this);
     }
 
 }

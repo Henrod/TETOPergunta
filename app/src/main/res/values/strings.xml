@@ -81,7 +81,7 @@
             <item>13- Não familiar</item>
         </array>
     <string name="m1q6">(1.06) Por favor, indique o RG de [NOME] (00-NÃO TEM, **-NÃO SABE,
-        ##-NÃO RESPONDEU)</string>
+        \#\# -NÃO RESPONDEU)</string>
     <string name="m1q7">(1.07) [NOME] está inscrito no cadastro único?</string>
         <array name="m1q7">
             <item> </item>
@@ -270,7 +270,7 @@
             <item>4- Transporte privado (carro, moto, carona) (-> 3.01)</item>
         </array>
     <string name="m3q10">(3.10) Poderia me dizer qual a renda mensal de [NOME] (trabalho ou se faz
-        bico) (00 - Não tem reda, ## - Não respondeu)</string>
+        bico) (00 - Não tem reda, \#\# - Não respondeu)</string>
     <string name="m3q11">(3.11) [NOME] recebe algum auxílio financeiro fixo do governo?</string>
         <array name="m3q11">
             <item> </item>
@@ -291,7 +291,7 @@
         <item>1- Sim</item>
         <item>2- Não</item>
         <item>3- ** - Não sabe</item>
-        <item>4- ## - Não respondeu</item>
+        <item>4- \#\# - Não respondeu</item>
     </array>
 
     <string name="m3q15">(3.15) Atualmente você ou algum integrante do lar mantém alguma dívida,
@@ -301,7 +301,7 @@
         <item>1- Sim</item>
         <item>2- Não</item>
         <item>3- ** - Não sabe</item>
-        <item>4- ## - Não respondeu</item>
+        <item>4- \#\# - Não respondeu</item>
     </array>
 
     <string name="m3q16">(3.16) Nos últimos 3 meses, você diria que vocês gastaram mais, menos ou
@@ -312,7 +312,7 @@
         <item>2- Menos (-> 3.17)</item>
         <item>3- O dinheiro exato (-> módulo 4)</item>
         <item>3- ** - Não sabe (-> módulo 4)</item>
-        <item>4- ## - Não respondeu (-> módulo 4)</item>
+        <item>4- \#\# - Não respondeu (-> módulo 4)</item>
     </array>
 
     <string name="m3q17">(3.17) Se vocês não gastaram todo o dinheiro que ganharam significa que
@@ -324,7 +324,7 @@
         <item>3- Guardam em casa (-> módulo 4)</item>
         <item>4- Outro (-> módulo 4)</item>
         <item>5- ** - Não sabe (-> módulo 4)</item>
-        <item>6- ## - Não respondeu (-> módulo 4)</item>
+        <item>6- \#\# - Não respondeu (-> módulo 4)</item>
     </array>
 
     <string name="m3q18">(3.18) O que fizeram para cobrir a falta de dinheiro nos últimos 3 meses?</string>
@@ -335,7 +335,7 @@
         <item>3- Guardam em casa (-> módulo 4)</item>
         <item>4- Outro (-> módulo 4)</item>
         <item>5- ** - Não sabe (-> módulo 4)</item>
-        <item>6- ## - Não respondeu (-> módulo 4)</item>
+        <item>6- \#\# - Não respondeu (-> módulo 4)</item>
     </array>
 
     <string name="m4q1">(4.01) [NOME] frequentou algum centro de saúde nos últimos três meses?</string>
@@ -505,7 +505,7 @@
             <item>1- Notificação da Defesa Civil</item>
             <item>2- Reintegração de posse</item>
             <item>3- Obra da prefeitura/Plano de Urbanização</item>
-            <item>4- Expulsoã ou remoção sem justificativa</item>
+            <item>4- Expulsão ou remoção sem justificativa</item>
             <item>5- Outro motivo</item>
         </array>
     <string name="m6q4">(6.04) Como foi feita a remoção da comunidade anterior?
@@ -563,86 +563,23 @@
     </string>
 
     <string name="m6q10">(6.10) Você confia nas seguintes pessoas ou instituições?</string>
+    <array name="m6q10">
+        <item> </item>
+        <item>Sim</item>
+        <item>Mais ou menos</item>
+        <item>Não</item>
+        <item>NS/NR</item>
+    </array>
     <string name="m6q101">(6.10.1) Família</string>
-    <array name="m6q101">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q102">(6.10.2) Amigos</string>
-    <array name="m6q102">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q103">(6.10.3) Vizinhos</string>
-    <array name="m6q103">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q104">(6.10.4) Ldeíres comunitários</string>
-    <array name="m6q104">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q105">(6.10.5) Polícia</string>
-    <array name="m6q105">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q106">(6.10.6) Prefeitura</string>
-    <array name="m6q106">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q107">(6.10.7) Órgãos públicos</string>
-    <array name="m6q107">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q108">(6.10.8) Politicos</string>
-    <array name="m6q108">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q109">(6.10.9) ONGs</string>
-    <array name="m6q109">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
     <string name="m6q1010">(6.10.10) Mída (tv, jornal, etc.)</string>
-    <array name="m6q1010">
-        <item> </item>
-        <item>Sim</item>
-        <item>Mais ou menos</item>
-        <item>Não</item>
-        <item>NS/NR</item>
-    </array>
 
     <string name="m6q11">(6.11) Como você diria que seus vizinhos ajudam sua família?
         (1- Apoio moral (escutam meus problemas) /
@@ -738,8 +675,8 @@
         <item>2- Tem interesse mas não sabe como</item>
         <item>3- Falta tempo</item>
         <item>4- Outro</item>
-        <item>**- Não sabe</item>
-        <item>##- Não respondeu</item>
+        <item>** - Não sabe</item>
+        <item>\#\# - Não respondeu</item>
     </array>
 
     <string name="m6q20">(6.20) De quais tipos de grupos ou associações comunitárias participa?
@@ -758,7 +695,7 @@
         <item>1- Sim</item>
         <item>2- Não</item>
         <item>3- ** - Não sabe</item>
-        <item>4- ## - Não respondeu</item>
+        <item>4- \#\# - Não respondeu</item>
     </array>
 
     <string name="m6q22">(6.22) Conhece algum projeto que tenha sido realizado ela associaçoã de
@@ -773,7 +710,7 @@
         8- Nenhum /
         9- Outro (Especifique) /
         **- Não sabe /
-        ##- Não qus responder
+        \#\# - Não qus responder
         )
     </string>
 
@@ -806,7 +743,7 @@
     <string name="m6q26">(6.26) Quais você considera as 3 principais preocupações da sua famlíia
         em grau de importância (do mais importante para o menos importante)?</string>
 
-    <string name="m6q27">(6.271) A família tem interessse no projeto das casas de emergência do TETO?</string>
+    <string name="m6q27">(6.27) A família tem interessse no projeto das casas de emergência do TETO?</string>
     <array name="m6q27">
         <item> </item>
         <item>1- Sim</item>
@@ -821,6 +758,7 @@
     comprometimetno caso trabalhássemos juntos</string>
     <string name="m10q1">(10.1) Aspectos que podem se de interesse: características familiares, limpeza
          e organização, violência familiar, se tem perspectiva de sair da comunidade, etc.</string>
+    <string name="m11q1">(11.1) Escrever referências que ajudem outras pessoas a localizar a casa no mapa</string>
 
 
 
