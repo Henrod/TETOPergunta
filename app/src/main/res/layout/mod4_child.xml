@@ -9,11 +9,16 @@
     >
 
     <TextView
-        android:layout_marginTop="50dp"
+        android:id="@+id/NOME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q1"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m4q1"
         android:layout_height="wrap_content"
@@ -24,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q2"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m4q2"
         android:layout_height="wrap_content"
@@ -35,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q3"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <EditText
         android:id="@+id/m4q3"
         android:layout_height="wrap_content"
@@ -47,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q4"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m4q4"
         android:layout_height="wrap_content"
@@ -58,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q5"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m4q5"
         android:layout_height="wrap_content"
@@ -69,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q6"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <EditText
         android:id="@+id/m4q6"
         android:layout_height="wrap_content"
@@ -82,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q7"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m4q7"
         android:layout_height="wrap_content"
@@ -94,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q8"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <EditText
         android:id="@+id/m4q8"
         android:layout_height="wrap_content"
@@ -106,7 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q9"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m4q9"
         android:layout_height="wrap_content"
@@ -117,7 +122,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m4q10"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <EditText
         android:id="@+id/m4q10"
         android:layout_height="wrap_content"

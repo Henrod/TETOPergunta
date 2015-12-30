@@ -13,13 +13,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m7q1"
             />
         <TextView
             android:id="@+id/tv_m7q1"
             android:layout_width="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:layout_height="wrap_content"
             />
     
@@ -28,14 +28,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m8q1"
             />
         <TextView
             android:id="@+id/tv_m8q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -43,14 +43,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m9q1"
             />
         <TextView
             android:id="@+id/tv_m9q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -58,14 +58,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m10q1"
             />
         <TextView
             android:id="@+id/tv_m10q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -73,14 +73,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m11q1"
             />
         <TextView
             android:id="@+id/tv_m11q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
 
     </TableLayout>

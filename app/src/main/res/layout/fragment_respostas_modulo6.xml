@@ -13,13 +13,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q1"
             />
         <TextView
             android:id="@+id/tv_m6q1"
             android:layout_width="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:layout_height="wrap_content"
             />
     
@@ -28,14 +28,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q2"
             />
         <TextView
             android:id="@+id/tv_m6q2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -43,14 +43,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q3"
             />
         <TextView
             android:id="@+id/tv_m6q3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -58,14 +58,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q4"
             />
         <TextView
             android:id="@+id/tv_m6q4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -73,14 +73,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q5"
             />
         <TextView
             android:id="@+id/tv_m6q5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -88,40 +88,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q6"
             />
         <TextView
             android:id="@+id/tv_m6q6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q7"
         />
     <TextView
         android:id="@+id/tv_m6q7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q8"
         />
     <TextView
         android:id="@+id/tv_m6q8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         />
@@ -129,14 +129,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q9"
         />
     <TextView
         android:id="@+id/tv_m6q9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         />
@@ -144,7 +144,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q10"
         />
 
@@ -155,140 +155,140 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q101"
                     />
                 <TextView
                     android:id="@+id/tv_m6q101"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q102"
                     />
                 <TextView
                     android:id="@+id/tv_m6q102"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q103"
                     />
                 <TextView
                     android:id="@+id/tv_m6q103"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q104"
                     />
                 <TextView
                     android:id="@+id/tv_m6q104"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q105"
                     />
                 <TextView
                     android:id="@+id/tv_m6q105"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q106"
                     />
                 <TextView
                     android:id="@+id/tv_m6q106"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q107"
                     />
                 <TextView
                     android:id="@+id/tv_m6q107"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q108"
                     />
                 <TextView
                     android:id="@+id/tv_m6q108"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q109"
                     />
                 <TextView
                     android:id="@+id/tv_m6q109"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:text="@string/m6q1010"
                     />
                 <TextView
                     android:id="@+id/tv_m6q1010"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     />
             </TableRow>
         </TableLayout>
@@ -297,41 +297,41 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q11"
             />
         <TextView
             android:id="@+id/tv_m6q11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q12"
             />
         <TextView
             android:id="@+id/tv_m6q12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q13"
             />
         <TextView
             android:id="@+id/tv_m6q13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -339,27 +339,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q14"
             />
         <TextView
             android:id="@+id/tv_m6q14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q15"
             />
         <TextView
             android:id="@+id/tv_m6q15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -367,14 +367,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q16"
             />
         <TextView
             android:id="@+id/tv_m6q16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -382,14 +382,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q17"
             />
         <TextView
             android:id="@+id/tv_m6q17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -397,14 +397,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q18"
             />
         <TextView
             android:id="@+id/tv_m6q18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -412,14 +412,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q19"
             />
         <TextView
             android:id="@+id/tv_m6q19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -427,14 +427,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q20"
             />
         <TextView
             android:id="@+id/tv_m6q20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
@@ -442,106 +442,106 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q21"
             />
         <TextView
             android:id="@+id/tv_m6q21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
     
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q22"
         />
     <TextView
         android:id="@+id/tv_m6q22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q23"
         />
     <TextView
         android:id="@+id/tv_m6q23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q24"
         />
     <TextView
         android:id="@+id/tv_m6q24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q25"
         />
     <TextView
         android:id="@+id/tv_m6q25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q26"
         />
     <TextView
         android:id="@+id/tv_m6q26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:text="@string/m6q27"
         />
     <TextView
         android:id="@+id/tv_m6q27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="12sp"
         />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:text="@string/m6q28"
             />
         <TextView
             android:id="@+id/tv_m6q28"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="12sp"
             />
         
 

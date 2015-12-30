@@ -119,7 +119,7 @@ public class Respostas {
         return this.id;
     }
 
-    public void export_to_excel(Context context) {
+    public boolean export_to_excel(Context context) {
         Toast.makeText(context, "Gerando tabela. Aguarde...", Toast.LENGTH_LONG).show();
 
         String file_name = getNSerie() + ".xls";
@@ -433,7 +433,10 @@ public class Respostas {
         } catch (IOException | WriteException e) {
             e.printStackTrace();
             Toast.makeText(context, "Erro. Tente novamente.", Toast.LENGTH_SHORT).show();
+            return false;
         }
+
+        return true;
     }
 
 }

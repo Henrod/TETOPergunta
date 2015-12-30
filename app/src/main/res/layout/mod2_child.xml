@@ -5,15 +5,19 @@
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/TETOAppTheme"
-    android:layout_marginTop="50dp"
     >
 
     <TextView
-        android:layout_marginTop="50dp"
+        android:id="@+id/NOME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q1"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q1"
         android:layout_height="wrap_content"
@@ -24,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q2"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q2"
         android:layout_height="wrap_content"
@@ -35,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q3"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q3"
         android:layout_height="wrap_content"
@@ -46,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q4"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q4"
         android:layout_height="wrap_content"
@@ -57,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q5"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q5"
         android:layout_height="wrap_content"
@@ -68,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q6"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <EditText
         android:id="@+id/m2q6"
         android:layout_height="wrap_content"
@@ -81,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q7"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q7"
         android:layout_height="wrap_content"
@@ -93,7 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/m2q8"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
     <Spinner
         android:id="@+id/m2q8"
         android:layout_height="wrap_content"

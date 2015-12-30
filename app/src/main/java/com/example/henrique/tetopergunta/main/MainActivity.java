@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         respostasList = data_handler.getLista();
         ListView lista = (ListView) findViewById(R.id.lista);
         lista.setAdapter(new ListAdapter(MainActivity.this, respostasList));

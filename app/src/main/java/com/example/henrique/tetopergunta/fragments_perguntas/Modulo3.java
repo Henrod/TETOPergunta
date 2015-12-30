@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
 import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
@@ -32,15 +33,11 @@ public class Modulo3 extends Fragment {
         view = inflater.inflate(R.layout.activity_modulo3, container, false);
         insertPoint = (ViewGroup) view.findViewById(R.id.mod3_table);
 
-
-        view.findViewById(R.id.mod3_add_person).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                InserirDados.not_a_new_person = false;
-                View new_view = inflater.inflate(R.layout.mod3_child, container, false);
-                insertPoint.addView(new_view);
-            }
-        });
+        for (ArrayList<RespostasInfo> r : InserirDados.respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
+            View view = inflater.inflate(R.layout.mod3_child, container, false);
+            ((TextView) view.findViewById(R.id.NOME)).setText("NOME: " + r.get(0).resp);
+            insertPoint.addView(view);
+        }
 
         set_respostas(InserirDados.respostas, inflater, container);
 

@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Informações da enquete"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"/>
         <EditText
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modulo0_A"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
         <EditText
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modulo0_B"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
         <EditText
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modulo0_C"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
         <EditText
@@ -199,7 +199,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modulo0_D"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
         <EditText
@@ -212,7 +212,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modulo0_E"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"/>
         <EditText

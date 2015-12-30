@@ -58,9 +58,9 @@ public class InserirDados extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         viewPager = (CustomViewPager) findViewById(R.id.tabs_pager);
-        tabsAdapter = new SimpleTabsAdapter(getSupportFragmentManager());
+
+        //tabsAdapter = new SimpleTabsAdapter(getSupportFragmentManager());
 
         modulo0 = new Modulo0();
         modulo1 = new Modulo1();
@@ -73,14 +73,8 @@ public class InserirDados extends AppCompatActivity {
 
 
         //creating tabs and adding them to adapter class
-        tabsAdapter.addFragment(modulo0, "Informações da enquete");
+        tabsAdapter.addFragment(modulo0, "Informações");
         tabsAdapter.addFragment(modulo1, "Módulo 1");
-        tabsAdapter.addFragment(modulo2, "Módulo 2");
-        tabsAdapter.addFragment(modulo3, "Módulo 3");
-        tabsAdapter.addFragment(modulo4, "Módulo 4");
-        tabsAdapter.addFragment(modulo5, "Módulo 5");
-        tabsAdapter.addFragment(modulo6, "Módulo 6");
-        tabsAdapter.addFragment(moduloExtra, "Módulo Extra");
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
@@ -103,8 +97,7 @@ public class InserirDados extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_dados, menu);
-
-        menu.findItem(R.id.save_table).setVisible(false);
+            menu.findItem(R.id.save_table).setVisible(false);
         this.menu = menu;
 
         return true;
@@ -119,30 +112,45 @@ public class InserirDados extends AppCompatActivity {
                         Intent ver_dados = new Intent(InserirDados.this, VerDados.class);
                         ver_dados.putExtra("id", respostas.getNSerie());
                         startActivity(ver_dados);
-                    } else
+                    } else {
                         Toast.makeText(InserirDados.this,
                                 "Nº série já existente ou não preenchido",
                                 Toast.LENGTH_LONG).show();
+                        viewPager.setCurrentItem(0);
+                    }
                 } catch (NullPointerException e) {
                     Toast.makeText(InserirDados.this, "Dados faltando. Revisar todos os módulos.",
                             Toast.LENGTH_LONG).show();
+                    viewPager.setCurrentItem(0);
+                    menu.findItem(R.id.save_table).setVisible(false);
+                    menu.findItem(R.id.next_module).setVisible(true);
                 }
                 return true;
             case R.id.cancel_table:
                 cancel_message();
                 return true;
             case R.id.next_module:
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                if (viewPager.getCurrentItem() == tabLayout.getTabCount() - 1) {
-                    menu.findItem(R.id.save_table).setVisible(true);
-                    menu.findItem(R.id.next_module).setVisible(false);
-                    tabLayout.setVisibility(View.VISIBLE);
-                    viewPager.setPagingEnabled(true);
-                }
+                    int next = viewPager.getCurrentItem() + 1;
+                    set_next_tab(next);
+
+                    viewPager.setCurrentItem(next);
+                    if (viewPager.getCurrentItem() == 7) {
+                        menu.findItem(R.id.save_table).setVisible(true);
+                        menu.findItem(R.id.next_module).setVisible(false);
+                        //tabLayout.setVisibility(View.VISIBLE);
+                        //viewPager.setPagingEnabled(true);
+                    }
+                return true;
             default:
                 super.onOptionsItemSelected(item);
         }
         return false;
+    }
+
+    private void save_mod1() {
+        modulo1.save();
+        if (insert_data) MainActivity.data_handler.update(respostas);
+        else MainActivity.data_handler.create(respostas);
     }
 
     private boolean save() {
@@ -184,5 +192,34 @@ public class InserirDados extends AppCompatActivity {
     private Respostas set_respostas(String id) {
         insert_data = true;
         return MainActivity.data_handler.retrieve(id);
+    }
+
+    public void generate_excel(View view) {
+
+    }
+
+    private void set_next_tab(int next_tab) {
+        switch (next_tab) {
+            case 2:
+                tabsAdapter.addFragment(modulo2, "Módulo 2");
+                break;
+            case 3:
+                tabsAdapter.addFragment(modulo3, "Módulo 3");
+                break;
+            case 4:
+                tabsAdapter.addFragment(modulo4, "Módulo 4");
+                break;
+            case 5:
+                tabsAdapter.addFragment(modulo5, "Módulo 5");
+                break;
+            case 6:
+                tabsAdapter.addFragment(modulo6, "Módulo 6");
+                break;
+            case 7:
+                tabsAdapter.addFragment(moduloExtra, "Módulo Extra");
+                break;
+        }
+
+        viewPager.setAdapter(tabsAdapter);
     }
 }

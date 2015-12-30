@@ -16,14 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Módulo 3"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/mod3_add_person"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Acrescentar pessoa" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q14"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
             <Spinner
                 android:id="@+id/m3q14"
                 android:layout_height="wrap_content"
@@ -53,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q15"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
             <Spinner
                 android:id="@+id/m3q15"
                 android:layout_height="wrap_content"
@@ -65,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q16"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
             <Spinner
                 android:id="@+id/m3q16"
                 android:layout_height="wrap_content"
@@ -77,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q17"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
             <Spinner
                 android:id="@+id/m3q17"
                 android:layout_height="wrap_content"
@@ -89,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q18"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
             <Spinner
                 android:id="@+id/m3q18"
                 android:layout_height="wrap_content"

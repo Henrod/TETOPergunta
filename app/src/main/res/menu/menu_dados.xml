@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".main.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".main.InserirDados">
 
     <item android:id="@+id/cancel_table"
         android:title="Cancelar tabela"
@@ -12,14 +12,14 @@
     <item android:id="@+id/save_table"
         android:title="Salvar tabela"
         android:orderInCategory="100"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:icon="@drawable/savetable"
         />
 
     <item android:id="@+id/next_module"
         android:title="Próximo módulo"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/nextmodule"
         />
 </menu>
