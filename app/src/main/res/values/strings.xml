@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TETOPergunta</string>
+    <string name="app_name">TETO\nPergunta</string>
 
     <string name="titulo_main">Lista Cadastros</string>
 
@@ -541,12 +541,14 @@
             5- Nenhum) </string>
 
 
-    <string name="m6q8">(6.08) Você sofre frequentemente algum tipo de discriminaçoã ou preconceito?
-        (1- Sim, carteira do idoso /
-        2- Sim, Projovem /
-        3- Sim, Tarifa Social (energia) /
-        4- Sim, Passe livre (transporte) /
-        5- Nenhum)
+    <string name="m6q8">(6.08) Você sofre frequentemente algum tipo de discriminação ou preconceito?
+        (1- Não, nunca sofri preconceito ( -> 6.10)/
+        2- Sim, por morar em uma comunidade /
+        3- Sim, por ser mulher /
+        4- Sim, pela cor da minha pele /
+        5- Sim, por ser portador de alguma doença /
+        6- Sim, por causa da minha orientaçoã sexual/
+        7- Sim, por outro motivo)
     </string>
 
     <string name="m6q9">(6.09) Você ou alguém da sua família enfrentam ou enfrentaram algum

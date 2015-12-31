@@ -49,6 +49,8 @@ public class VerDados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dados);
 
+        Toast.makeText(VerDados.this, "Deslize a tela para ver demais módulos. ", Toast.LENGTH_LONG).show();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -80,9 +82,11 @@ public class VerDados extends AppCompatActivity {
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
+        viewPager.setPagingEnabled(true);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setVisibility(View.VISIBLE);
     }
 
     @Override

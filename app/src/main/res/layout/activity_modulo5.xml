@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
-    <TableLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:layout_marginTop="30dp"
@@ -26,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q1" />
         <Spinner
             android:id="@+id/m5q1"
@@ -38,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q2" />
         <Spinner
             android:id="@+id/m5q2"
@@ -50,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q3" />
         <EditText
             android:layout_width="match_parent"
@@ -62,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q4" />
         <EditText
             android:layout_width="match_parent"
@@ -74,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q5" />
         <EditText
             android:layout_width="match_parent"
@@ -86,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q6" />
         <Spinner
             android:id="@+id/m5q6"
@@ -98,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q7" />
         <Spinner
             android:id="@+id/m5q7"
@@ -110,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q8" />
         <Spinner
             android:id="@+id/m5q8"
@@ -122,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q9" />
         <Spinner
             android:id="@+id/m5q9"
@@ -134,7 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q10" />
         <EditText
             android:layout_width="match_parent"
@@ -146,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q11" />
         <EditText
             android:layout_width="match_parent"
@@ -158,7 +156,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q12" />
         <EditText
             android:layout_width="match_parent"
@@ -170,7 +168,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q13" />
         <EditText
             android:layout_width="match_parent"
@@ -182,7 +180,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q14" />
         <EditText
             android:layout_width="match_parent"
@@ -194,7 +192,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q15" />
         <EditText
             android:layout_width="match_parent"
@@ -206,7 +204,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q16" />
         <EditText
             android:layout_width="match_parent"
@@ -218,7 +216,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q17" />
         <EditText
             android:layout_width="match_parent"
@@ -230,7 +228,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q18" />
         <EditText
             android:layout_width="match_parent"
@@ -242,7 +240,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q19" />
         <EditText
             android:layout_width="match_parent"
@@ -254,7 +252,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q20" />
         <EditText
             android:layout_width="match_parent"
@@ -266,7 +264,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q21" />
         <EditText
             android:layout_width="match_parent"
@@ -278,7 +276,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q22" />
         <EditText
             android:layout_width="match_parent"
@@ -290,7 +288,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q23" />
         <EditText
             android:layout_width="match_parent"
@@ -302,7 +300,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q24" />
         <EditText
             android:layout_width="match_parent"
@@ -314,7 +312,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q25" />
         <EditText
             android:layout_width="match_parent"
@@ -326,7 +324,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q26" />
         <EditText
             android:layout_width="match_parent"
@@ -338,7 +336,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="@string/m5q27" />
         <EditText
             android:layout_width="match_parent"
@@ -346,7 +344,34 @@
             android:id="@+id/m5q27"
             android:inputType="text"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            android:text="@string/m5q27"
+             />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            android:text="@string/m5q27"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"/>
 
-    </TableLayout>
+
+    </LinearLayout>
 
 </ScrollView>

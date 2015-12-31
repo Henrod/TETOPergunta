@@ -10,10 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.henrique.tetopergunta.R;
 import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
+import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
 import com.example.henrique.tetopergunta.fragments_adapter.CustomViewPager;
 import com.example.henrique.tetopergunta.fragments_adapter.SimpleTabsAdapter;
 import com.example.henrique.tetopergunta.fragments_perguntas.Modulo0;
@@ -25,6 +27,8 @@ import com.example.henrique.tetopergunta.fragments_perguntas.Modulo5;
 import com.example.henrique.tetopergunta.fragments_perguntas.Modulo6;
 import com.example.henrique.tetopergunta.fragments_perguntas.ModuloExtra;
 
+import java.util.ArrayList;
+
 /**
  * Created by henrique on 09/10/15.
  */
@@ -33,7 +37,7 @@ public class InserirDados extends AppCompatActivity {
     public static Respostas respostas;
 
     private static TabLayout tabLayout;
-    private static CustomViewPager viewPager;
+    public static CustomViewPager viewPager;
     private static SimpleTabsAdapter tabsAdapter;
     private Menu menu;
 
@@ -58,9 +62,14 @@ public class InserirDados extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         viewPager = (CustomViewPager) findViewById(R.id.tabs_pager);
 
-        //tabsAdapter = new SimpleTabsAdapter(getSupportFragmentManager());
+        tabsAdapter = new SimpleTabsAdapter(getSupportFragmentManager());
+
+        String id = getIntent().getStringExtra("id");
+        respostas = id == null ? new Respostas() : set_respostas(id);
+        findViewById(R.id.excel_button).setVisibility(View.GONE);
 
         modulo0 = new Modulo0();
         modulo1 = new Modulo1();
@@ -75,6 +84,12 @@ public class InserirDados extends AppCompatActivity {
         //creating tabs and adding them to adapter class
         tabsAdapter.addFragment(modulo0, "Informações");
         tabsAdapter.addFragment(modulo1, "Módulo 1");
+        tabsAdapter.addFragment(modulo2, "Módulo 2");
+        tabsAdapter.addFragment(modulo3, "Módulo 3");
+        tabsAdapter.addFragment(modulo4, "Módulo 4");
+        tabsAdapter.addFragment(modulo5, "Módulo 5");
+        tabsAdapter.addFragment(modulo6, "Módulo 6");
+        tabsAdapter.addFragment(moduloExtra, "Módulo Extra");
 
         //set up view pager to give a swipe effect
         viewPager.setAdapter(tabsAdapter);
@@ -82,16 +97,12 @@ public class InserirDados extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setVisibility(View.INVISIBLE);
+        tabLayout.setVisibility(View.GONE);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        String id = getIntent().getStringExtra("id");
-        respostas = id == null ? new Respostas() : set_respostas(id);
-        findViewById(R.id.excel_button).setVisibility(View.GONE);
     }
 
     @Override
@@ -130,27 +141,40 @@ public class InserirDados extends AppCompatActivity {
                 cancel_message();
                 return true;
             case R.id.next_module:
-                    int next = viewPager.getCurrentItem() + 1;
-                    set_next_tab(next);
-
-                    viewPager.setCurrentItem(next);
-                    if (viewPager.getCurrentItem() == 7) {
-                        menu.findItem(R.id.save_table).setVisible(true);
-                        menu.findItem(R.id.next_module).setVisible(false);
-                        //tabLayout.setVisibility(View.VISIBLE);
-                        //viewPager.setPagingEnabled(true);
+                if (viewPager.getCurrentItem() == 1) {
+                    modulo1.save();
+                    if (modulo3.insertPoint != null && modulo3.insertPoint.getChildCount() > 0) {
+                        modulo3.insertPoint.removeAllViews();
                     }
+                    for (ArrayList<RespostasInfo> r : InserirDados.respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
+                        View view_2 = getLayoutInflater().inflate(R.layout.mod2_child, modulo2.container, false);
+                        ((TextView) view_2.findViewById(R.id.NOME)).setText("NOME: " + r.get(0).resp);
+                        modulo2.insertPoint.addView(view_2);
+
+                        try {
+                            View view_3 = getLayoutInflater().inflate(R.layout.mod3_child, modulo3.container, false);
+                            ((TextView) view_3.findViewById(R.id.NOME)).setText("NOME: " + r.get(0).resp);
+                            modulo3.insertPoint.addView(view_3);
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    InserirDados.modulo2.set_respostas(respostas);
+                }
+
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                if (viewPager.getCurrentItem() == 7) {
+                    menu.findItem(R.id.save_table).setVisible(true);
+                    menu.findItem(R.id.next_module).setVisible(false);
+                    //tabLayout.setVisibility(View.VISIBLE);
+                    //viewPager.setPagingEnabled(true);
+                }
+
                 return true;
             default:
                 super.onOptionsItemSelected(item);
         }
         return false;
-    }
-
-    private void save_mod1() {
-        modulo1.save();
-        if (insert_data) MainActivity.data_handler.update(respostas);
-        else MainActivity.data_handler.create(respostas);
     }
 
     private boolean save() {

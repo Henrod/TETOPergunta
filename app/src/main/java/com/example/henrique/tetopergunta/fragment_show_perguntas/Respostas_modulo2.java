@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.henrique.tetopergunta.R;
 import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
 import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
 import com.example.henrique.tetopergunta.main.VerDados;
-import com.example.henrique.tetopergunta.R;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -36,6 +36,12 @@ public class Respostas_modulo2 extends Fragment {
         view = inflater.inflate(R.layout.fragment_respostas_modulo2, container, false);
         insertPoint = (ViewGroup) view.findViewById(R.id.mod2_table);
 
+        for (ArrayList<RespostasInfo> r : VerDados.respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
+            View view = inflater.inflate(R.layout.mod2_child_resps, container, false);
+            ((TextView) view.findViewById(R.id.NOME)).setText("NOME: " + r.get(0).resp);
+            insertPoint.addView(view);
+        }
+
         setTextViewsWithData(inflater, container);
 
 
@@ -46,9 +52,10 @@ public class Respostas_modulo2 extends Fragment {
         LinkedList<ArrayList<RespostasInfo>> list = VerDados.respostas.
                 getModAnswers(Respostas.Modulos.MODULO_2);
 
-        for (ArrayList<RespostasInfo> resps_por_pessoa : list) {
-            View new_view = inflater.inflate(R.layout.mod2_child_resps, container, false);
-            insertPoint.addView(new_view);
+        for (int i = 0; i < insertPoint.getChildCount(); i++) {
+            ArrayList<RespostasInfo> resps_por_pessoa = list.get(i);
+            View new_view = insertPoint.getChildAt(i);
+            //insertPoint.addView(new_view);
 
             for (RespostasInfo rInfo : resps_por_pessoa)
                 switch (rInfo.n_questao) {

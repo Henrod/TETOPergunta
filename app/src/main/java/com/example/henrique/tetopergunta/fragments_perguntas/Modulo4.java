@@ -2,6 +2,7 @@ package com.example.henrique.tetopergunta.fragments_perguntas;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class Modulo4 extends Fragment {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+        Log.d("CHAMEI", "4");
 
         view = inflater.inflate(R.layout.activity_modulo4, container, false);
         insertPoint = (ViewGroup) view.findViewById(R.id.mod4_table);
@@ -48,9 +50,11 @@ public class Modulo4 extends Fragment {
     private void set_respostas(Respostas respostas, LayoutInflater inflater, ViewGroup container) {
         LinkedList<ArrayList<RespostasInfo>> mod4_list = respostas.getModAnswers(Respostas.Modulos.MODULO_4);
 
-        for (ArrayList<RespostasInfo> resps : mod4_list) {
-            View view = inflater.inflate(R.layout.mod4_child, container, false);
-            insertPoint.addView(view);
+        if (mod4_list.size() > 0)
+        for (int i = 0; i < mod4_list.size() && i < insertPoint.getChildCount(); i++) {
+            ArrayList<RespostasInfo> resps = mod4_list.get(i);
+            View view = insertPoint.getChildAt(i);
+            //insertPoint.addView(view);
 
             for (RespostasInfo rInfo : resps) {
                 switch (rInfo.n_questao) {

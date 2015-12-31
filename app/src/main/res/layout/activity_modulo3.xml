@@ -19,19 +19,18 @@
             android:textSize="12sp"
             android:textStyle="bold"/>
 
+        <TableLayout
+            android:id="@+id/mod3_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TableLayout
-                android:id="@+id/mod3_table"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"/>
-
             <TextView
-                android:paddingTop="50sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q14"
@@ -43,7 +42,6 @@
                 android:entries="@array/m3q14"/>
 
             <TextView
-                android:paddingTop="50sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q15"
@@ -55,7 +53,6 @@
                 android:entries="@array/m3q15"/>
 
             <TextView
-                android:paddingTop="50sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q16"
@@ -67,7 +64,6 @@
                 android:entries="@array/m3q16"/>
 
             <TextView
-                android:paddingTop="50sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q17"
@@ -79,7 +75,6 @@
                 android:entries="@array/m3q17"/>
 
             <TextView
-                android:paddingTop="50sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/m3q18"

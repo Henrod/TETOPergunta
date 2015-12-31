@@ -173,7 +173,7 @@ public class DBMS {
     private static final String MOD4_TABLE_NAME = "DADOS_MOD4";
 
     private static final String DB_NAME = "TETO_DB";
-    private static final int DB_VERSION = 16;
+    private static final int DB_VERSION = 17;
     private static final String CREATE_MAIN_TABLE = "CREATE TABLE IF NOT EXISTS " + MAIN_TABLE_NAME + "("
             + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + M0Q1 +    " TEXT, " + M0Q2 +  " TEXT, " + M0Q3 +  " TEXT, "

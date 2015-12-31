@@ -1,8 +1,6 @@
 package com.example.henrique.tetopergunta.fragments_perguntas;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.henrique.tetopergunta.R;
 import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
@@ -23,57 +20,21 @@ import java.util.LinkedList;
 
 public class Modulo2 extends Fragment {
 
-    LayoutInflater inflater;
+    public LayoutInflater inflater;
     public ViewGroup insertPoint;
-    ViewGroup container;
+    public ViewGroup container;
     View view;
 
     @Override
-    public void onStart() {
-        super.onStart();
-        Log.d("CHAMEI", "Start");
-        for (ArrayList<RespostasInfo> r : InserirDados.respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
-            View view = inflater.inflate(R.layout.mod2_child, container, false);
-            ((TextView) view.findViewById(R.id.NOME)).setText("NOME: " + r.get(0).resp);
-            insertPoint.addView(view);
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d("CHAMEI", "Resume");
-
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        Log.d("CHAMEI", "Attach");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("CHAMEI", "Create");
-    }
-
-    @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
-        Log.d("CHAMEI", "Create view");
+        Log.d("CHAMEI", "2");
         this.inflater = inflater;
         this.container = container;
         view = inflater.inflate(R.layout.activity_modulo2, container, false);
 
         insertPoint = (ViewGroup) view.findViewById(R.id.mod2_table);
 
-        for (ArrayList<RespostasInfo> r : InserirDados.respostas.getModAnswers(Respostas.Modulos.MODULO_1)) {
-            View view = inflater.inflate(R.layout.mod2_child, container, false);
-            ((TextView) view.findViewById(R.id.NOME)).setText("NOME: " + r.get(0).resp);
-            insertPoint.addView(view);
-        }
-
-        set_respostas(InserirDados.respostas, inflater, container);
+        set_respostas(InserirDados.respostas);
 
         return view;
     }
@@ -105,6 +66,7 @@ public class Modulo2 extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        save();
     }
 
     public void save() {
@@ -134,13 +96,15 @@ public class Modulo2 extends Fragment {
         }
     }
 
-    private void set_respostas(Respostas respostas, LayoutInflater inflater, ViewGroup container) {
+    public void set_respostas(Respostas respostas) {
 
         LinkedList<ArrayList<RespostasInfo>> mod2_list = respostas.getModAnswers(Respostas.Modulos.MODULO_2);
 
-        for (ArrayList<RespostasInfo> resps : mod2_list) {
-            View view = inflater.inflate(R.layout.mod2_child, container, false);
-            insertPoint.addView(view);
+        if (mod2_list.size() > 0)
+        for (int i = 0; i < mod2_list.size() && i < insertPoint.getChildCount(); i++) {
+            ArrayList<RespostasInfo> resps = mod2_list.get(i);
+            View view = insertPoint.getChildAt(i);
+            //insertPoint.addView(view);
 
             for (RespostasInfo rInfo : resps) {
                 switch (rInfo.n_questao) {

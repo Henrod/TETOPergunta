@@ -2,17 +2,18 @@ package com.example.henrique.tetopergunta.fragments_perguntas;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.henrique.tetopergunta.R;
 import com.example.henrique.tetopergunta.banco_de_dados.Respostas;
 import com.example.henrique.tetopergunta.banco_de_dados.RespostasInfo;
 import com.example.henrique.tetopergunta.main.InserirDados;
 import com.example.henrique.tetopergunta.main.MainActivity;
-import com.example.henrique.tetopergunta.R;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -110,6 +111,7 @@ public class Modulo1 extends Fragment {
     }
 
     public void save() {
+        Log.d("CHAMEI", "1 salvo");
         String m1q10 = ((EditText) view.findViewById(R.id.m1q10)).getText().toString();
         InserirDados.respostas.setAnswers(
                 new RespostasInfo(1, 10, m1q10), Respostas.Modulos.MAIN, 0, InserirDados.insert_data
